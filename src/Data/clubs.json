@@ -1,0 +1,247 @@
+[
+  {
+    "slug": "nursing-excellence-club",
+    "name": "Nursing Excellence Club",
+    "tagline": "Fostering Clinical Mastery & Professional Growth",
+    "heroImage": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80",
+    "badge": "Academic",
+    "badgeIcon": "FaGraduationCap",
+    "established": "2012",
+    "members": 320,
+    "events": 48,
+    "awards": 12,
+    "overview": {
+      "title": "About the Club",
+      "description": "The Nursing Excellence Club is the premier academic society at SRM College of Nursing, Trichy, dedicated to nurturing clinical competence and professional integrity among nursing students. We bridge classroom learning with real-world healthcare demands by creating spaces for simulation, skill labs, case-based discussions, and mentorship-driven growth.",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+      "highlights": [
+        { "icon": "FaCalendarAlt", "label": "Established", "value": "2012" },
+        { "icon": "FaUsers", "label": "Active Members", "value": "320+" },
+        { "icon": "FaTrophy", "label": "Awards Won", "value": "12" },
+        { "icon": "FaStar", "label": "Events Hosted", "value": "48+" }
+      ]
+    },
+    "aim": {
+      "title": "Our Aim",
+      "statement": "To cultivate a generation of compassionate, evidence-based nursing professionals who lead with clinical excellence, ethical responsibility, and a lifelong commitment to healthcare advancement.",
+      "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80",
+      "pillars": [
+        { "icon": "FaHeartbeat", "title": "Clinical Mastery", "desc": "Develop hands-on proficiency through simulation labs, skill workshops, and supervised clinical practice." },
+        { "icon": "FaBookOpen", "title": "Evidence-Based Practice", "desc": "Instill a culture of research-driven decisions in every aspect of patient care and nursing interventions." },
+        { "icon": "FaHandsHelping", "title": "Compassionate Care", "desc": "Nurture empathy, patient dignity, and holistic well-being as the core of every nursing interaction." }
+      ]
+    },
+    "objectives": [
+      { "icon": "FaBullseye", "title": "Skill Enhancement", "desc": "Provide structured skill-building workshops that complement the formal curriculum with practical, hands-on experience in clinical techniques." },
+      { "icon": "FaChalkboardTeacher", "title": "Peer Learning", "desc": "Foster a collaborative learning environment where senior students mentor juniors, sharing clinical insights and academic strategies." },
+      { "icon": "FaFlask", "title": "Research Culture", "desc": "Encourage students to engage in nursing research, present papers at conferences, and contribute to the body of evidence-based practice." },
+      { "icon": "FaNetworkWired", "title": "Professional Networking", "desc": "Connect students with healthcare institutions, alumna professionals, and nursing bodies for internships, placements, and career guidance." },
+      { "icon": "FaGlobe", "title": "Global Exposure", "desc": "Organise international webinars, exchange programs, and collaborations with nursing schools abroad to broaden global healthcare perspectives." },
+      { "icon": "FaMedal", "title": "Leadership Development", "desc": "Train student leaders through club governance, event management, and inter-college competitions to build confidence and responsibility." }
+    ],
+    "activities": [
+      { "title": "Annual Clinical Skills Olympiad", "category": "Competition", "image": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&q=80", "desc": "A flagship inter-college competition testing clinical procedural accuracy, critical thinking, and patient communication skills.", "date": "Every March" },
+      { "title": "Simulation Lab Bootcamps", "category": "Workshop", "image": "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=600&q=80", "desc": "Intensive 2-day bootcamps using high-fidelity mannequins and real medical equipment to practice emergency scenarios.", "date": "Bi-monthly" },
+      { "title": "Healthcare Guest Lecture Series", "category": "Seminar", "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80", "desc": "Distinguished clinicians, researchers, and hospital directors share insights on current trends, challenges, and innovations in nursing.", "date": "Monthly" },
+      { "title": "Community Health Camps", "category": "Outreach", "image": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80", "desc": "Free health screening camps in rural Trichy villages, offering BP monitoring, diabetes checks, and health education to underserved communities.", "date": "Quarterly" },
+      { "title": "Research Paper Presentation Day", "category": "Research", "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80", "desc": "Students present original nursing research before a panel of faculty and external examiners, competing for best paper awards.", "date": "Every January" },
+      { "title": "World Health Day Celebrations", "category": "Awareness", "image": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&q=80", "desc": "Awareness rallies, poster exhibitions, nukkad nataks (street plays), and pledges observed on key WHO health days throughout the year.", "date": "Throughout the year" }
+    ]
+  },
+  {
+    "slug": "research-innovation-club",
+    "name": "Research & Innovation Club",
+    "tagline": "Pioneering Evidence-Based Nursing Science",
+    "heroImage": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=80",
+    "badge": "Research",
+    "badgeIcon": "FaFlask",
+    "established": "2015",
+    "members": 180,
+    "events": 32,
+    "awards": 9,
+    "overview": {
+      "title": "About the Club",
+      "description": "The Research & Innovation Club at SRM Nursing, Trichy, empowers students to move beyond textbooks and contribute original knowledge to the nursing discipline. We provide mentorship, lab access, statistical tools training, and publication support to transform curious students into published researchers.",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+      "highlights": [
+        { "icon": "FaCalendarAlt", "label": "Established", "value": "2015" },
+        { "icon": "FaUsers", "label": "Active Members", "value": "180+" },
+        { "icon": "FaTrophy", "label": "Awards Won", "value": "9" },
+        { "icon": "FaStar", "label": "Events Hosted", "value": "32+" }
+      ]
+    },
+    "aim": {
+      "title": "Our Aim",
+      "statement": "To transform nursing students into critical thinkers and researchers who generate evidence, challenge existing practices, and contribute meaningfully to the advancement of healthcare knowledge.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      "pillars": [
+        { "icon": "FaMicroscope", "title": "Scientific Inquiry", "desc": "Train students in research methodology, biostatistics, and ethical research practices." },
+        { "icon": "FaBookOpen", "title": "Publication Support", "desc": "Guide students from data collection to journal submission and peer review readiness." },
+        { "icon": "FaLightbulb", "title": "Innovation Mindset", "desc": "Cultivate entrepreneurial thinking to develop nursing-tech solutions for real healthcare problems." }
+      ]
+    },
+    "objectives": [
+      { "icon": "FaBullseye", "title": "Research Literacy", "desc": "Build foundational skills in literature review, hypothesis formation, data collection, and statistical analysis." },
+      { "icon": "FaChalkboardTeacher", "title": "Mentored Projects", "desc": "Pair students with faculty mentors for year-long research projects culminating in conference presentations or publications." },
+      { "icon": "FaFlask", "title": "Lab Access", "desc": "Facilitate access to research labs, software (SPSS, STATA), and library databases for comprehensive research support." },
+      { "icon": "FaNetworkWired", "title": "Collaborations", "desc": "Partner with hospitals and medical colleges to provide multi-site clinical research opportunities." },
+      { "icon": "FaGlobe", "title": "Conference Participation", "desc": "Fund and facilitate student participation in state, national, and international nursing research conferences." },
+      { "icon": "FaMedal", "title": "Ethical Standards", "desc": "Educate students on research ethics, plagiarism, and responsible conduct in healthcare research." }
+    ],
+    "activities": [
+      { "title": "Annual Research Symposium", "category": "Research", "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80", "desc": "A two-day symposium where students present original research findings to faculty, peers, and external evaluators.", "date": "Every February" },
+      { "title": "SPSS & Statistics Workshop", "category": "Workshop", "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80", "desc": "Hands-on training sessions on SPSS, data entry, descriptive and inferential statistics for nursing research.", "date": "Every Semester" },
+      { "title": "Journal Club Meetings", "category": "Academic", "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&q=80", "desc": "Weekly meetings where students critically appraise recent nursing journal articles and discuss implications for practice.", "date": "Weekly" },
+      { "title": "Innovation Hackathon", "category": "Competition", "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80", "desc": "Students pitch tech-driven nursing innovations to a panel of healthcare professionals and investors.", "date": "Every November" },
+      { "title": "Ethics in Research Workshop", "category": "Seminar", "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80", "desc": "Expert-led sessions on IRB processes, informed consent, data privacy, and responsible authorship.", "date": "Annually" },
+      { "title": "Poster Presentation Competition", "category": "Competition", "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80", "desc": "Students design and present research posters to an audience of academicians, clinicians, and peers.", "date": "Every April" }
+    ]
+  },
+  {
+    "slug": "cultural-arts-club",
+    "name": "Cultural & Arts Club",
+    "tagline": "Celebrating Creativity, Culture & Community",
+    "heroImage": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
+    "badge": "Cultural",
+    "badgeIcon": "FaPalette",
+    "established": "2010",
+    "members": 410,
+    "events": 65,
+    "awards": 22,
+    "overview": {
+      "title": "About the Club",
+      "description": "The Cultural & Arts Club is the vibrant creative heart of SRM College of Nursing. We believe holistic healthcare professionals are also culturally aware, emotionally expressive, and creatively engaged. From classical dance to modern art, from street theatre to film-making, we celebrate the full spectrum of human expression.",
+      "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
+      "highlights": [
+        { "icon": "FaCalendarAlt", "label": "Established", "value": "2010" },
+        { "icon": "FaUsers", "label": "Active Members", "value": "410+" },
+        { "icon": "FaTrophy", "label": "Awards Won", "value": "22" },
+        { "icon": "FaStar", "label": "Events Hosted", "value": "65+" }
+      ]
+    },
+    "aim": {
+      "title": "Our Aim",
+      "statement": "To nurture the artistic soul of every nursing student, recognising that creativity, empathy, and cultural sensitivity are as vital to patient care as clinical knowledge.",
+      "image": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&q=80",
+      "pillars": [
+        { "icon": "FaPalette", "title": "Creative Expression", "desc": "Provide platforms for visual art, performing arts, and literary expression to every student." },
+        { "icon": "FaMusic", "title": "Cultural Heritage", "desc": "Celebrate Tamil and Indian cultural traditions while embracing global artistic influences." },
+        { "icon": "FaTheaterMasks", "title": "Emotional Resilience", "desc": "Use art therapy and creative outlets to support mental well-being among healthcare students." }
+      ]
+    },
+    "objectives": [
+      { "icon": "FaBullseye", "title": "Artistic Platforms", "desc": "Create regular showcases for dance, music, fine arts, drama, and literary work by students across all years." },
+      { "icon": "FaChalkboardTeacher", "title": "Skill Workshops", "desc": "Offer expert-led workshops in classical dance, instrumental music, portrait sketching, pottery, and creative writing." },
+      { "icon": "FaFlask", "title": "Intercultural Exchange", "desc": "Organise cultural exchange events with other institutions to celebrate India's rich diversity." },
+      { "icon": "FaNetworkWired", "title": "Art for Health", "desc": "Connect artistic expression with healthcare through therapeutic art sessions and patient-care exhibitions." },
+      { "icon": "FaGlobe", "title": "Community Outreach", "desc": "Perform street plays and awareness campaigns on health topics to educate the general public through art." },
+      { "icon": "FaMedal", "title": "Festival Competitions", "desc": "Prepare and send students to inter-collegiate cultural fests, building confidence, teamwork, and competitive spirit." }
+    ],
+    "activities": [
+      { "title": "Kala Utsav – Annual Cultural Fest", "category": "Festival", "image": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600&q=80", "desc": "A three-day extravaganza featuring classical dances, fusion performances, fine arts exhibitions, and literary events.", "date": "Every December" },
+      { "title": "Nukkad Natak – Street Theatre", "category": "Awareness", "image": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&q=80", "desc": "Students perform street plays on health and social awareness themes across Trichy's public spaces.", "date": "Quarterly" },
+      { "title": "Classical Dance Workshop", "category": "Workshop", "image": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80", "desc": "Bharatanatyam and Kuchipudi masters conduct immersive workshops for students at all skill levels.", "date": "Bi-monthly" },
+      { "title": "Art for Healing Exhibition", "category": "Exhibition", "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80", "desc": "Student artworks exploring themes of health, healing, and human connection, displayed for faculty, parents, and the public.", "date": "Every March" },
+      { "title": "Music & Band Night", "category": "Performance", "image": "https://images.unsplash.com/photo-1501612780327-45045538702b?w=600&q=80", "desc": "An evening of vocal and instrumental performances by student bands and soloists across genres.", "date": "Every September" },
+      { "title": "Photography & Short Film Contest", "category": "Competition", "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80", "desc": "Students capture the essence of healthcare, college life, and community through the lens, competing for best film and photograph.", "date": "Every February" }
+    ]
+  },
+  {
+    "slug": "sports-wellness-club",
+    "name": "Sports & Wellness Club",
+    "tagline": "Building Healthy Bodies & Champion Minds",
+    "heroImage": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80",
+    "badge": "Sports",
+    "badgeIcon": "FaRunning",
+    "established": "2011",
+    "members": 280,
+    "events": 40,
+    "awards": 15,
+    "overview": {
+      "title": "About the Club",
+      "description": "The Sports & Wellness Club champions the belief that a fit, mentally resilient nurse is a better caregiver. We organise athletic competitions, wellness retreats, yoga programs, and mental health initiatives that help nursing students stay physically strong and emotionally balanced through the demands of their rigorous education.",
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
+      "highlights": [
+        { "icon": "FaCalendarAlt", "label": "Established", "value": "2011" },
+        { "icon": "FaUsers", "label": "Active Members", "value": "280+" },
+        { "icon": "FaTrophy", "label": "Awards Won", "value": "15" },
+        { "icon": "FaStar", "label": "Events Hosted", "value": "40+" }
+      ]
+    },
+    "aim": {
+      "title": "Our Aim",
+      "statement": "To foster a culture of physical fitness, mental wellness, and competitive sportsmanship among nursing students, empowering them to lead healthy lives and inspire patients to do the same.",
+      "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
+      "pillars": [
+        { "icon": "FaRunning", "title": "Physical Fitness", "desc": "Promote regular exercise, sports participation, and athletic excellence among all students." },
+        { "icon": "FaBrain", "title": "Mental Wellness", "desc": "Integrate mindfulness, yoga, and stress management to support psychological well-being." },
+        { "icon": "FaHandshake", "title": "Team Spirit", "desc": "Build camaraderie, sportsmanship, and collective resilience through team sports and group challenges." }
+      ]
+    },
+    "objectives": [
+      { "icon": "FaBullseye", "title": "Athletic Development", "desc": "Identify and train student athletes in cricket, volleyball, basketball, kabaddi, and athletics for inter-collegiate competitions." },
+      { "icon": "FaChalkboardTeacher", "title": "Yoga & Mindfulness", "desc": "Conduct regular yoga and meditation sessions to reduce academic stress and improve focus." },
+      { "icon": "FaFlask", "title": "Nutrition Awareness", "desc": "Educate students on sports nutrition, balanced diets, and healthy lifestyle practices relevant to nursing." },
+      { "icon": "FaNetworkWired", "title": "Mental Health Campaigns", "desc": "Run awareness campaigns and peer support circles around burnout, anxiety, and self-care for healthcare students." },
+      { "icon": "FaGlobe", "title": "Sports Tournaments", "desc": "Host and participate in inter-college, state-level, and national sports tournaments across disciplines." },
+      { "icon": "FaMedal", "title": "Fitness Challenges", "desc": "Organise campus fitness challenges, step-count competitions, and wellness marathons to motivate the entire student community." }
+    ],
+    "activities": [
+      { "title": "Annual Sports Day – Udayam", "category": "Tournament", "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80", "desc": "A full-day athletic carnival featuring track events, team sports, and prize ceremonies for top performers.", "date": "Every January" },
+      { "title": "Sunrise Yoga Camp", "category": "Wellness", "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80", "desc": "A 7-day early morning yoga and pranayama camp guided by certified instructors, open to all students.", "date": "Every Semester" },
+      { "title": "Inter-College Cricket Tournament", "category": "Competition", "image": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=80", "desc": "SRM Nursing's cricket team hosts and competes in a citywide inter-college T20 tournament.", "date": "Every October" },
+      { "title": "Mental Health Awareness Week", "category": "Awareness", "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80", "desc": "A themed week with expert talks, journaling workshops, and peer support sessions to destigmatise mental health.", "date": "Every October 10" },
+      { "title": "Wellness Marathon – 5K Run", "category": "Fitness", "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80", "desc": "A campus-wide 5K fun run open to students, faculty, and families, themed around a public health cause.", "date": "Every February" },
+      { "title": "Nutrition & Fitness Workshop", "category": "Workshop", "image": "https://images.unsplash.com/photo-1540206395-68808572332f?w=600&q=80", "desc": "Registered dietitians and sports coaches lead interactive sessions on meal planning and fitness routines for students.", "date": "Annually" }
+    ]
+  },
+  {
+    "slug": "community-outreach-club",
+    "name": "Community Outreach Club",
+    "tagline": "Serving Society, Transforming Lives Through Nursing",
+    "heroImage": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&q=80",
+    "badge": "Social",
+    "badgeIcon": "FaHandsHelping",
+    "established": "2013",
+    "members": 350,
+    "events": 55,
+    "awards": 18,
+    "overview": {
+      "title": "About the Club",
+      "description": "The Community Outreach Club at SRM College of Nursing takes healthcare beyond hospital walls. Our members are the face of compassionate nursing in Trichy's most underserved communities — conducting health camps, home visits, school health programmes, and disaster relief operations to make primary healthcare accessible to all.",
+      "image": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80",
+      "highlights": [
+        { "icon": "FaCalendarAlt", "label": "Established", "value": "2013" },
+        { "icon": "FaUsers", "label": "Active Members", "value": "350+" },
+        { "icon": "FaTrophy", "label": "Awards Won", "value": "18" },
+        { "icon": "FaStar", "label": "Events Hosted", "value": "55+" }
+      ]
+    },
+    "aim": {
+      "title": "Our Aim",
+      "statement": "To extend quality healthcare services to underserved communities in and around Trichy, while developing empathetic, socially conscious nursing professionals committed to public health equity.",
+      "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80",
+      "pillars": [
+        { "icon": "FaHospital", "title": "Primary Healthcare", "desc": "Deliver free health screening, first aid, and referral services to rural and urban poor communities." },
+        { "icon": "FaChild", "title": "Child & Maternal Health", "desc": "Focus on antenatal care, child immunisation, and nutritional support for mothers and children." },
+        { "icon": "FaLeaf", "title": "Health Education", "desc": "Conduct structured health literacy campaigns to reduce preventable diseases through awareness." }
+      ]
+    },
+    "objectives": [
+      { "icon": "FaBullseye", "title": "Health Camps", "desc": "Organise monthly health screening camps in villages covering BP, blood sugar, BMI, vision, and dental checks." },
+      { "icon": "FaChalkboardTeacher", "title": "School Health Programme", "desc": "Visit local government schools to teach children basic hygiene, first aid, and healthy habits." },
+      { "icon": "FaFlask", "title": "Vaccination Drives", "desc": "Support government immunisation drives during national vaccination campaigns in the district." },
+      { "icon": "FaNetworkWired", "title": "NGO Partnerships", "desc": "Collaborate with local NGOs, Panchayati Raj institutions, and PHCs for sustained community health impact." },
+      { "icon": "FaGlobe", "title": "Disaster Preparedness", "desc": "Train students in disaster nursing and deploy teams during floods, cyclones, and community emergencies in Tamil Nadu." },
+      { "icon": "FaMedal", "title": "Nutrition Programmes", "desc": "Conduct malnutrition screening and supplemental nutrition distribution in tribal and coastal communities." }
+    ],
+    "activities": [
+      { "title": "Village Health Camp – Semippu Kootam", "category": "Health Camp", "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80", "desc": "Monthly free health camps in adopted villages providing multi-specialty screenings and medicine distribution.", "date": "Monthly" },
+      { "title": "School Health Awareness Programme", "category": "Education", "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80", "desc": "Interactive sessions in government schools on hygiene, nutrition, first aid, and anti-tobacco/drug awareness.", "date": "Monthly" },
+      { "title": "Blood Donation Drive", "category": "Donation", "image": "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=600&q=80", "desc": "Bi-annual blood donation camp in collaboration with government blood banks, mobilising students and faculty.", "date": "Bi-annually" },
+      { "title": "Antenatal Care Outreach", "category": "Maternal Health", "image": "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&q=80", "desc": "Home visits and group sessions for expectant mothers in semi-urban areas on nutrition, safe delivery, and neonatal care.", "date": "Quarterly" },
+      { "title": "Disaster Relief Response Team", "category": "Emergency", "image": "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=600&q=80", "desc": "Trained student teams deployed during natural disasters to provide first aid, triage, and psychosocial support.", "date": "As Required" },
+      { "title": "World Environment Day Plantation Drive", "category": "Environment", "image": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=600&q=80", "desc": "Mass tree plantation drives in campus and nearby areas, linking environmental health with public health outcomes.", "date": "June 5th" }
+    ]
+  }
+]

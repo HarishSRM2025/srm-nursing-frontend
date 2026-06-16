@@ -1,0 +1,40 @@
+.Breadcrum{
+     background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(160deg, var(--asso-primary-dark) 0%, var(--asso-primary) 100%);
+    padding: clamp(200px,8vw,100px) 0 clamp(60px,8vw,100px);
+}
+.Breadcrum .Container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 44px);
+    color: white;
+}
+
+.Breadcrum h1{
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3.5vw, 42px);
+    font-weight: 900;
+    color: white;
+    line-height: 1.18;
+    margin-bottom: 12px;
+}
+
+.Breadcrum span{
+    color: var(--accent);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: clamp(14px, 1.2vw, 16px);
+    font-weight: 1000;
+    margin: 0 10px;
+}
+.Breadcrum a{
+    color: var(--text-light);
+    font-family: var(--font-display);
+    font-size: clamp(14px, 1.2vw, 16px);
+    font-weight: 1000;
+    margin: 0 10px;
+    text-decoration: none;
+
+}
