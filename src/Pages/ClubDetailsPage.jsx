@@ -13,7 +13,6 @@ import ClubOverview from '../Components/ClubDetails/ClubOverview';
 import ClubAim from '../Components/ClubDetails/ClubAim';
 import ClubObjectives from '../Components/ClubDetails/ClubObjectives';
 import ClubActivities from '../Components/ClubDetails/ClubActivities';
-import '../Styles/clubDetails.css';
 import Breadcrum from '../Components/Common/Breadcrum';
 
 // ── Tiny hook: reads :slug from React Router OR falls back to prop / URL hash ──
