@@ -18,7 +18,6 @@ import ContactPage from './Pages/ContactPage'
 import EventsPage from './Pages/EventsPage'
 import EventDetailPage from './Pages/EventDetailPage'
 import ClubsPage from './Pages/ClubsPage'
-// import Research from './Pages/Research'
 
 function App() {
 

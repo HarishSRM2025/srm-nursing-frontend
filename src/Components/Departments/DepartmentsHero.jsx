@@ -1,5 +1,5 @@
 import { FaFlask, FaChevronDown } from 'react-icons/fa';
-import '../departments.css';
+import '../../Styles/departments.css';
 
 export default function DepartmentsHero() {
   return (

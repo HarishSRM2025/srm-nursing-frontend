@@ -1,4 +1,4 @@
-import '../styles/ResearchHero.css';
+import '../../Styles/research.css';
 import { RiFlaskLine } from 'react-icons/ri';
 
 export default function ResearchHero({ total, years }) {
