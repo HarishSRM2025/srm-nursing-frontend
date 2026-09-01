@@ -5,6 +5,7 @@ import ContactFAQ from "../Components/Contact/ContactFAQ";
 import ContactCTABanner from "../Components/Contact/ContactCTABanner";
 import "../Styles/contact.css"
 import Breadcrum from "../Components/Common/Breadcrum";
+import { Contact } from "../Components/Home/Contact";
 
 const ContactPage = () => {
   return (
@@ -13,7 +14,8 @@ const ContactPage = () => {
       <ContactInfoStrip />
       <ContactMapSection />
       <ContactFAQ />
-      <ContactCTABanner />
+      <Contact/>
+      {/* <ContactCTABanner /> */}
     </main>
   );
 };

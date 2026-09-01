@@ -15,7 +15,7 @@ const FacilitiesPage = () => {
       <FacOverview />
       <FacStats />
       <FacGrid />
-      <FacFeatureSpotlight/>
+      {/* <FacFeatureSpotlight/> */}
       <FacTestimonials />
       <FacCTA />
     </>
