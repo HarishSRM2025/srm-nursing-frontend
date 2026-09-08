@@ -14,11 +14,18 @@ import DepartmentCard from '../Components/Departments/DepartmentCard';
 import DepartmentsCTA from '../Components/Departments/DepartmentsCTA';
 import Breadcrum from '../Components/Common/Breadcrum';
 
+import Dept1 from '../assets/images/Deparments/1.jpg';
+import Dept2 from '../assets/images/Deparments/2.jpg';
+import Dept3 from '../assets/images/Deparments/3.jpg';
+import Dept4 from '../assets/images/Deparments/4.jpg';
+import Dept5 from '../assets/images/Deparments/5.jpg';
+import Dept6 from '../assets/images/Deparments/6.jpg';
+
 const DEPARTMENTS = [
   {
     id: 'fundamentals', eyebrow: 'Department 01', title: 'Fundamentals of Nursing',
     color: '#4b2e83', icon: FaHeartbeat,
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80',
+    image: Dept1,
     description: [
       'The time is spent exclusively on theoretical and clinical instruction, monthly performance feedback, and student nurture and counselling. Students are closely supervised and mentored in groups of 10.',
       'Basic nursing procedures are demonstrated by teachers, and students re-demonstrate on Manikins in the skill lab. After gaining confidence, students carry out procedures on patients — molded across physical, mental, social, and spiritual dimensions.',
@@ -33,7 +40,7 @@ const DEPARTMENTS = [
   {
     id: 'adult-health', eyebrow: 'Department 02', title: 'Adult Health Nursing',
     color: '#0f8ca6', icon: FaUserMd,
-    image: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=900&q=80',
+    image: Dept2,
     description: [
       'Specializing in care of patients with Medical and Surgical conditions. Students are posted in Trichy SRM Medical College Hospital & Research Centre — a 1575-bedded multi-specialty teaching hospital equipped with the latest diagnostic and treatment technologies.',
       'The hospital offers Surgery, Medicine, Obstetrics & Gynecology, Paediatrics, Orthopedics, Neurology, Ophthalmology, ENT, Cardiology, Urology, Nephrology, Respiratory Medicine, and Psychiatry with 24×7 services.',
@@ -48,7 +55,7 @@ const DEPARTMENTS = [
   {
     id: 'community', eyebrow: 'Department 03', title: 'Community Health Nursing',
     color: '#0f7a5a', icon: FaUsers,
-    image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=900&q=80',
+    image: Dept3,
     description: [
       'The College strongly emphasizes preventive and promotive health. Programmes promote health of communities through direct and indirect services for all age groups, preparing students to acquire clinical competencies at different levels.',
       'Services include Home Care, Clinic Services, School Health Programmes, Special Camps, and Community Organization Activities. Antenatal and well-baby clinics are conducted in villages alongside Adolescent Health and Mass Education Programmes.',
@@ -63,7 +70,7 @@ const DEPARTMENTS = [
   {
     id: 'child-health', eyebrow: 'Department 04', title: 'Child Health Nursing',
     color: '#c2760c', icon: FaBaby,
-    image: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=900&q=80',
+    image: Dept4,
     description: [
       'Paediatric nurses provide care for children from birth through their late teens. Special training delivers expert care while working with families to address their concerns and help them understand treatment options.',
       'Students develop unique capabilities in communication and treatment techniques with children and families, backed by the finest academic infrastructure and dynamic, hands-on education.',
@@ -78,7 +85,7 @@ const DEPARTMENTS = [
   {
     id: 'mental-health', eyebrow: 'Department 05', title: 'Mental Health Nursing',
     color: '#7c3aed', icon: FaBrain,
-    image: 'https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=900&q=80',
+    image: Dept5,
     description: [
       'The Department of Psychiatric Nursing is integral to the multidisciplinary team in treatment and rehabilitation of persons with mental disorders. It fosters quality education to upgrade knowledge and skill in psychiatric nursing.',
       "Faculty incorporates principles of neurobiology, psychology, and psychiatric nursing to mould students as dedicated and competent mental health nurses. The department also provides guidance and counselling for students' educational, clinical, and social needs.",
@@ -93,7 +100,7 @@ const DEPARTMENTS = [
   {
     id: 'midwifery', eyebrow: 'Department 06', title: 'Midwifery & OBG Nursing',
     color: '#b5456a', icon: FaFemale,
-    image: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=900&q=80',
+    image: Dept6,
     description: [
       'Midwives provide independent care to women prior to pregnancy, during pregnancy, childbirth, postnatal, and newborn care within the healthcare framework. Gynaecological nurses handle clinical assessment, patient advocacy, and care management.',
       'The department enhances skills in early disease identification, management, and complication prevention. New manikins and simulators support world-class skill development with effective hands-on practice for every student.',
