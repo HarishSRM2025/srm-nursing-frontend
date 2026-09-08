@@ -3,6 +3,7 @@ import {
   FiWifi, FiMonitor, FiBook, FiShield,
   FiTruck, FiSun, FiCoffee, FiUsers
 } from 'react-icons/fi';
+import HeroImg from '../../assets/images/Facilities/Hero/1.JPG';
 
 const highlights = [
   { icon: <FiWifi />, text: 'High-Speed Internet Campus-Wide' },
@@ -47,31 +48,17 @@ const FacOverview = () => {
           </div>
 
           <div className="fac-overview__visual">
-            <div className="fac-overview__image-grid">
-              <div className="fac-overview__img-main">
-                <img
-                  src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80"
-                  alt="Campus Overview"
-                />
-              </div>
-              <div className="fac-overview__img-sm">
-                <img
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80"
-                  alt="Lab Facility"
-                />
-                <div className="fac-overview__badge-float">
-                  <div className="fac-overview__badge-float-icon"><FiShield /></div>
-                  <div className="fac-overview__badge-float-text">
-                    <strong>NAAC</strong>
-                    <span>Accredited</span>
-                  </div>
+            <div className="fac-overview__img-single">
+              <img
+                src={HeroImg}
+                alt="Campus Overview"
+              />
+              <div className="fac-overview__badge-float">
+                <div className="fac-overview__badge-float-icon"><FiShield /></div>
+                <div className="fac-overview__badge-float-text">
+                  <strong>NAAC</strong>
+                  <span>Accredited</span>
                 </div>
-              </div>
-              <div className="fac-overview__img-sm">
-                <img
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80"
-                  alt="Campus Life"
-                />
               </div>
             </div>
           </div>

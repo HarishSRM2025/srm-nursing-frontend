@@ -127,6 +127,26 @@
   gap: 14px;
 }
 
+.fac-overview__img-single {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 480px;
+  box-shadow: var(--shadow-lg);
+}
+
+.fac-overview__img-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.fac-overview__img-single:hover img {
+  transform: scale(1.03);
+}
+
 .fac-overview__img-main {
   grid-column: 1 / 3;
   border-radius: var(--radius-lg);
@@ -218,6 +238,7 @@
   .fac-overview__highlights { grid-template-columns: 1fr; }
   .fac-overview__image-grid { grid-template-columns: 1fr; }
   .fac-overview__img-main { grid-column: 1; }
+  .fac-overview__img-single { height: 320px; }
 }
 /* FacGrid */
 .fac-grid {
