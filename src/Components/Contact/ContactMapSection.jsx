@@ -20,11 +20,7 @@ const ContactMapSection = () => {
       </div>
 
       <div className="contact-map__frame">
-        <iframe
-          title="SRM Trichy College of Nursing Location"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=78.6%2C10.78%2C78.65%2C10.82&layer=mapnik"
-          loading="lazy"
-        />
+        <iframe title="SRM Trichy College of Nursing Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9292.808543141642!2d78.74964709148355!3d10.959104056803783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf1ea900b9d0d%3A0xbcc2d0481c1b2865!2sSRM%20Trichy%20College%20of%20Nursing!5e1!3m2!1sen!2sin!4v1788951281414!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         <div className="contact-map__badge">
           <IoLocationSharp />
           <span>SRM Trichy College of Nursing</span>
