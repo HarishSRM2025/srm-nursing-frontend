@@ -3,10 +3,10 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaFileSignature, FaPap
 import {FaFacebookF,FaInstagram,FaYoutube,FaLinkedinIn} from "react-icons/fa";
 /* ─── CONTACT ─── */
 const contactItems = [
-  { icon: <FaMapMarkerAlt />, label: "Address", text: "Nightingale College of Nursing\nNo. 45, Medical College Road, Trichy – 620 019\nTamil Nadu, India" },
-  { icon: <FaPhoneAlt />, label: "Phone", text: "+91 431 245 6789 (General)\n+91 98765 43210 (Admissions)" },
-  { icon: <FaEnvelope />, label: "Email", text: "admissions@nightingalecollege.edu.in\nprincipal@nightingalecollege.edu.in" },
-  { icon: <FaClock />, label: "Office Hours", text: "Monday – Saturday: 9:00 AM – 5:00 PM\nSunday: Closed" },
+  { icon: <FaMapMarkerAlt />, label: "Address", text: "SRM Trichy College of  Nursing\nIrungalur Village, Manachannallur Taluk,\n near Toll Booth, Tiruchirappalli, Tamilnadu 621105" },
+  { icon: <FaPhoneAlt />, label: "Phone", text: "+91 9585228600 (Mobile)\n 04312258501/02/03 (Office)" },
+  { icon: <FaEnvelope />, label: "Email", text: "principal@nc.srmtrichy.edu.in" },
+  { icon: <FaClock />, label: "Office Hours", text: "Monday – Friday: 9:00 AM – 5:00 PM\nSaturday : 9:00 AM – 5:00 PM\nSunday: Closed" },
 ];
 
 const API_URL = import.meta.env.VITE_BACKEND_API_URL || import.meta.env.VITE_API_URL || 'http://localhost:5000';

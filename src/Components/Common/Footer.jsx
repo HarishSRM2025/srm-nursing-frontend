@@ -1,5 +1,7 @@
 import React from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope,FaChevronRight, FaClock, FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaTwitter, FaHospitalUser } from "react-icons/fa";
+import LogoImg from '../../assets/images/Logo/logo.png'
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope,FaChevronRight, FaClock, FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 /* ─── FOOTER ─── */
 export function Footer() {
   const handleAnchor = (href) => {
@@ -12,13 +14,9 @@ export function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="#hero" className="nav-logo" onClick={(e) => { e.preventDefault(); handleAnchor("#hero"); }}>
-              <div className="nav-logo-icon"><FaHospitalUser /></div>
-              <div className="nav-logo-text">
-                <span className="nav-logo-name">Nightingale College</span>
-                <span className="nav-logo-sub">of Nursing Excellence</span>
-              </div>
-            </a>
+            <Link to="/" className="footer-logo">
+              <img src={LogoImg} alt="SRM College of Nursing Excellence" className="footer-logo-img" />
+            </Link>
             <p>Dedicated to shaping compassionate, competent, and ethically grounded nursing professionals since 1996. NAAC Grade A | INC Recognized.</p>
             <div className="footer-social">
               {[FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaTwitter].map((Icon, i) => (
