@@ -1,12 +1,53 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaFileSignature, FaPaperPlane, FaCheckCircle, FaSpinner } from "react-icons/fa";
-import {FaFacebookF,FaInstagram,FaYoutube,FaLinkedinIn} from "react-icons/fa";
+import { 
+  FaMapMarkerAlt, 
+  FaPhoneAlt, 
+  FaEnvelope, 
+  FaClock, 
+  FaFileSignature, 
+  FaPaperPlane, 
+  FaCheckCircle, 
+  FaSpinner,
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedinIn,
+  FaTwitter
+} from "react-icons/fa";
 /* ─── CONTACT ─── */
 const contactItems = [
   { icon: <FaMapMarkerAlt />, label: "Address", text: "SRM Trichy College of  Nursing\nIrungalur Village, Manachannallur Taluk,\n near Toll Booth, Tiruchirappalli, Tamilnadu 621105" },
   { icon: <FaPhoneAlt />, label: "Phone", text: "+91 9585228600 (Mobile)\n 04312258501/02/03 (Office)" },
   { icon: <FaEnvelope />, label: "Email", text: "principal@nc.srmtrichy.edu.in" },
   { icon: <FaClock />, label: "Office Hours", text: "Monday – Friday: 9:00 AM – 5:00 PM\nSaturday : 9:00 AM – 5:00 PM\nSunday: Closed" },
+];
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    icon: <FaFacebookF />,
+    href: "https://www.facebook.com/SRM-Trichy-College-of-Nursing-114885406585842/",
+  },
+  {
+    name: "Instagram",
+    icon: <FaInstagram />,
+    href: "https://www.instagram.com/ncsrmtrichy/",
+  },
+  {
+    name: "YouTube",
+    icon: <FaYoutube />,
+    href: "https://www.youtube.com/channel/UCHh3kHjTC23SBPuq48lWwTA/?guided_help_flow=5",
+  },
+  {
+    name: "LinkedIn",
+    icon: <FaLinkedinIn />,
+    href: "https://www.linkedin.com/company/srm-trichy-college-of-nursing/",
+  },
+  {
+    name: "Twitter",
+    icon: <FaTwitter />,
+    href: "https://twitter.com/ncsrmtrichy",
+  },
 ];
 
 const API_URL = import.meta.env.VITE_BACKEND_API_URL || import.meta.env.VITE_API_URL || 'http://localhost:5000';
@@ -91,8 +132,18 @@ export function Contact() {
               ))}
             </div>
             <div className="contact-socials">
-              {[FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn].map((Icon, i) => (
-                <a key={i} href="#" className="contact-social-link"><Icon /></a>
+              {socialLinks.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-social-link"
+                  aria-label={item.name}
+                  title={item.name}
+                >
+                  {item.icon}
+                </a>
               ))}
             </div>
           </div>

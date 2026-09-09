@@ -2,6 +2,34 @@ import React from "react";
 import LogoImg from '../../assets/images/Logo/logo.png'
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope,FaChevronRight, FaClock, FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
+const socialLinks = [
+  {
+    name: "Facebook",
+    icon: <FaFacebookF />,
+    href: "https://www.facebook.com/SRM-Trichy-College-of-Nursing-114885406585842/",
+  },
+  {
+    name: "Instagram",
+    icon: <FaInstagram />,
+    href: "https://www.instagram.com/ncsrmtrichy/",
+  },
+  {
+    name: "YouTube",
+    icon: <FaYoutube />,
+    href: "https://www.youtube.com/channel/UCHh3kHjTC23SBPuq48lWwTA/?guided_help_flow=5",
+  },
+  {
+    name: "LinkedIn",
+    icon: <FaLinkedinIn />,
+    href: "https://www.linkedin.com/company/srm-trichy-college-of-nursing/",
+  },
+  {
+    name: "Twitter",
+    icon: <FaTwitter />,
+    href: "https://twitter.com/ncsrmtrichy",
+  },
+];
+
 /* ─── FOOTER ─── */
 export function Footer() {
   const handleAnchor = (href) => {
@@ -19,8 +47,17 @@ export function Footer() {
             </Link>
             <p>Dedicated to shaping compassionate, competent, and ethically grounded nursing professionals since 1996. NAAC Grade A | INC Recognized.</p>
             <div className="footer-social">
-              {[FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaTwitter].map((Icon, i) => (
-                <a key={i} href="#"><Icon /></a>
+              {socialLinks.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.name}
+                  title={item.name}
+                >
+                  {item.icon}
+                </a>
               ))}
             </div>
           </div>
