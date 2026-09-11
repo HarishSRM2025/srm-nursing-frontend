@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import LogoImg from '../../assets/images/Logo/logo.png'
+import organogramPdf from '../../PDF/SRMTCON_Organogram.pdf';
+import academicCalendarPdf from '../../PDF/Academic_Calendar_2026.pdf';
+import eventCalendarPdf from '../../PDF/Event _Calendar_2026.pdf';
 import {
   FaHospitalUser,
   FaChevronDown,
@@ -51,16 +54,16 @@ export default function Navbar() {
     {
       label: "About us",
       children: [
-        { icon: <FaSitemap />, label: "Organizational Structure", href: "#" },
+        { icon: <FaSitemap />, label: "Organogram", href: organogramPdf, external: true },
         { icon: <IoManSharp />, label: "Code of Conduct", href: "/code-of-conduct" },
       ],
     },
     {
       label: "Academics",
-      href: "/academics",
       children: [
+        { icon: <FaBook />, label: "Academics Overview", href: "/academics" },
         { icon: <FaBook />, label: "Departments", href: "/departments" },
-        { icon: <FaBook />, label: "Academic Calendar", href: "#" },
+        { icon: <FaBook />, label: "Academic Calendar", href: academicCalendarPdf, external: true },
       ],
     },
     {
@@ -75,7 +78,13 @@ export default function Navbar() {
     },
     { label: "Placement", href: "/placements" },
     { label: "Research", href: "/research" },
-    { label: "Events", href: "/events" },
+    {
+      label: "Events",
+      children: [
+        { icon: <FaBook />, label: "All Events", href: "/events" },
+        { icon: <FaBook />, label: "Event Calendar", href: eventCalendarPdf, external: true },
+      ],
+    },
     { label: "Contact", href: "/contact" },
     
   ];
@@ -200,7 +209,7 @@ export default function Navbar() {
                         >
                           {child.icon} {child.label}
                         </a>
-                      ) : child.href?.startsWith("http") ? (
+                      ) : child.external || child.href?.startsWith("http") ? (
                         <a
                           key={child.label}
                           href={child.href}
@@ -304,7 +313,7 @@ export default function Navbar() {
                         >
                           {child.label}
                         </a>
-                      ) : child.href?.startsWith("http") ? (
+                      ) : child.external || child.href?.startsWith("http") ? (
                         <a
                           key={child.label}
                           href={child.href}
