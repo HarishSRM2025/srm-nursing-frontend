@@ -16,8 +16,6 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaMobileAlt } from "react-icons/fa";
 import { FaCalendarCheck } from "react-icons/fa";
 import Img1 from "../../assets/images/CodeOfConduct/Student/1.JPG"
-import Img2 from "../../assets/images/CodeOfConduct/Student/2.JPG"
-import Img3 from "../../assets/images/CodeOfConduct/Student/3.JPG"
 
 // ─── STUDENTS SECTION ──────────────────────────────────────────
 export default function Students() {
@@ -77,23 +75,15 @@ export default function Students() {
               ))}
             </div>
           </div>
-          {/* Image mosaic — hidden on mobile */}
-          <div className="student-mosaic" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "220px 220px", gap: 14 }}>
-            <style>{`@media(max-width:768px){.student-mosaic{display:none!important}}`}</style>
-            <div className="img-card" style={{ gridColumn: "1/3" }}>
+          {/* Single image — hidden on mobile */}
+          <div className="student-image img-card" style={{ width: "100%", height: 320 }}>
+            <style>{`@media(max-width:768px){.student-image{display:none!important}}`}</style>
               <img src={Img1} alt="Nursing students in class" />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(47,27,92,0.7) 0%, transparent 60%)" }} />
               <div style={{ position: "absolute", bottom: 18, left: 20 }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, color: "white" }}>Classroom Excellence</div>
                 <div style={{ fontSize: 11, color: "rgba(255,255,255,0.65)" }}>Discipline starts in the classroom</div>
               </div>
-            </div>
-            <div className="img-card">
-              <img src={Img2} alt="Student ID" />
-            </div>
-            <div className="img-card">
-              <img src={Img3} alt="Clinical area" />
-            </div>
           </div>
         </div>
 

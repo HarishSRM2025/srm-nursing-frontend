@@ -28,22 +28,18 @@ export default function DressCode() {
   return (
     <section id="dress" style={{ padding: "clamp(60px,8vw,100px) 0", background: "white" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 clamp(16px, 4vw, 44px)"}}>
-        {/* Hero banner */}
-        <div style={{ position: "relative", borderRadius: "var(--radius-lg)", overflow: "hidden", marginBottom: "clamp(32px,4vw,60px)", height: "clamp(200px,35vw,320px)" }}>
-          <img src={Img1} alt="Nursing uniform" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(47,27,92,0.92) 40%, rgba(15,140,166,0.55) 100%)" }} />
-          <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", padding: "0 clamp(20px,5vw,60px)", flexWrap: "wrap", gap: 20 }}>
-            <div style={{ flex: 1, minWidth: 200 }}>
-              <div className={`section-chip white`}><FaTshirt style={{ fontSize: 13 }} /> Appearance Standards</div>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(22px,4vw,44px)", fontWeight: 900, color: "white", lineHeight: 1.15, marginBottom: 10 }}>Dress Code Policy</h2>
-              <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "clamp(12px,1.6vw,15px)", lineHeight: 1.75, maxWidth: 480 }}>
+        {/* Header row */}
+        <div className="grid-2col coc-header-row" style={{ alignItems: "center" }}>
+          <div>
+              <div className="section-chip teal"><FaTshirt style={{ fontSize: 13 }} /> Appearance Standards</div>
+              <h2 className="coc-heading">Dress Code <span className="coc-heading-accent">Policy</span></h2>
+              <p className="coc-description">
                 Professional appearance reflects our commitment to nursing excellence. Uniform discipline builds confidence, hygiene awareness, and team cohesion in clinical and academic settings.
               </p>
-            </div>
-            <div style={{ display: "flex", gap: 16, flexShrink: 0 }}>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginTop: 24 }}>
               {[
-                { icon: <FaMale style={{ fontSize: 28, color: "rgba(255,255,255,0.8)" }} />, label: "Boys", count: boys.length + " Rules", color: "rgba(75,46,131,0.6)" },
-                { icon: <FaFemale style={{ fontSize: 28, color: "rgba(255,255,255,0.8)" }} />, label: "Girls", count: girls.length + " Rules", color: "rgba(15,140,166,0.5)" },
+                { icon: <FaMale style={{ fontSize: 28, color: "white" }} />, label: "Boys", count: boys.length + " Rules", color: "var(--primary)" },
+                { icon: <FaFemale style={{ fontSize: 28, color: "white" }} />, label: "Girls", count: girls.length + " Rules", color: "var(--teal)" },
               ].map((g, i) => (
                 <div key={i} style={{ background: g.color, backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: "var(--radius-md)", padding: "clamp(14px,2vw,24px) clamp(18px,2.5vw,32px)", textAlign: "center" }}>
                   {g.icon}
@@ -53,12 +49,15 @@ export default function DressCode() {
               ))}
             </div>
           </div>
+          <div className="img-card" style={{ width: "100%", height: 320 }}>
+            <img src={Img1} alt="Nursing uniform" />
+          </div>
         </div>
 
         {/* Two cards */}
         <div className="grid-2col">
           {/* Boys */}
-          <div style={{ background: "var(--off-white)", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
+          <div style={{ background: "var(--off-white)", borderRadius: "var(--radius-lg)", overflow: "hidden" }}>
             <div style={{ position: "relative", height: 220 }}>
               <img src={Img2} alt="Male nurse" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(47,27,92,0.3) 0%, rgba(47,27,92,0.75) 100%)" }} />
@@ -87,7 +86,7 @@ export default function DressCode() {
           </div>
 
           {/* Girls */}
-          <div style={{ background: "var(--off-white)", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
+          <div style={{ background: "var(--off-white)", borderRadius: "var(--radius-lg)", overflow: "hidden" }}>
             <div style={{ position: "relative", height: 220 }}>
               <img src={Img3} alt="Female nurse" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(15,140,166,0.2) 0%, rgba(47,27,92,0.78) 100%)" }} />

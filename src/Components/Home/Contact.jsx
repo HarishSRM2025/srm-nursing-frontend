@@ -175,9 +175,7 @@ export function Contact() {
                   <option value="">Select a Program</option>
                   <option>B.Sc Nursing (4 Years)</option>
                   <option>M.Sc Nursing (2 Years)</option>
-                  <option>Post Basic B.Sc Nursing</option>
                   <option>GNM Program</option>
-                  <option>Certificate Courses</option>
                 </select>
               </div>
               <div className="form-group">

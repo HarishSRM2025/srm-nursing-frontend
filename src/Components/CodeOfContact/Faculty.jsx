@@ -1,8 +1,6 @@
 import { FaHandshake, FaRegCheckCircle, FaRegStar, FaGlobe, FaUserMd, FaFlask, FaMicroscope, FaBookOpen, FaBullhorn, FaHeartbeat, FaRegEye, FaRegHospital, FaCalendarCheck, FaBan, FaUsers } from "react-icons/fa";
 import { MdSchool } from "react-icons/md"; import { FaChalkboardTeacher } from "react-icons/fa";
 import Img1 from "../../assets/images/CodeOfConduct/COCForFaculty/1.JPG"
-import Img2 from "../../assets/images/CodeOfConduct/COCForFaculty/2.JPG"
-import Img3 from "../../assets/images/CodeOfConduct/COCForFaculty/3.JPG"
 export default function Faculty() {
   const coreDuties = [
     [<MdSchool />, "Educate students and encourage a genuine love of learning."],
@@ -37,23 +35,15 @@ export default function Faculty() {
     <section id="faculty" style={{ padding: "clamp(60px,8vw,100px) 0", background: "var(--off-white)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 clamp(16px, 4vw, 44px)" }}>
         <div className="grid-2col" style={{ alignItems: "center", marginBottom: "clamp(32px,4vw,60px)", gap: "clamp(28px,5vw,60px)" }}>
-          {/* Collage */}
-          <div className="faculty-mosaic" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "180px 220px", gap: 14 }}>
-            <style>{`@media(max-width:768px){.faculty-mosaic{display:none!important}}`}</style>
-            <div className="img-card">
-              <img src={Img3} alt="Lecture" />
-            </div>
-            <div className="img-card">
-              <img src={Img2} alt="Research" />
-            </div>
-            <div className="img-card" style={{ gridColumn: "1/3" }}>
+          {/* Single image — hidden on mobile */}
+          <div className="faculty-image img-card" style={{ width: "100%", height: 320 }}>
+            <style>{`@media(max-width:768px){.faculty-image{display:none!important}}`}</style>
               <img src={Img1} alt="Faculty teaching" />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(47,27,92,0.75) 0%, transparent 55%)" }} />
               <div style={{ position: "absolute", bottom: 18, left: 20 }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, color: "white" }}>Dedicated Faculty</div>
                 <div style={{ fontSize: 11, color: "rgba(255,255,255,0.65)" }}>Shaping future healthcare professionals</div>
               </div>
-            </div>
           </div>
 
           <div>

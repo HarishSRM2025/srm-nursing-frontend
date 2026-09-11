@@ -58,7 +58,8 @@ export default function Hostel() {
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(22px,4vw,42px)", fontWeight: 900, color: "white", lineHeight: 1.2, marginBottom: 10 }}>
                 Hostel Rules<br /><span style={{ color: "var(--teal-light)" }}>& Regulations</span>
               </h2>
-              <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "clamp(12px,1.6vw,15px)", maxWidth: 480, lineHeight: 1.72 }}>
+              <style>{`@media(max-width:768px){.hostel-description{display:none}}`}</style>
+              <p className="hostel-description" style={{ color: "rgba(255,255,255,0.7)", fontSize: "clamp(12px,1.6vw,15px)", maxWidth: 480, lineHeight: 1.72 }}>
                 Our hostel provides a safe, disciplined environment. These {rules.length} rules ensure the well-being of all residents and maintain the highest standards of campus living.
               </p>
             </div>

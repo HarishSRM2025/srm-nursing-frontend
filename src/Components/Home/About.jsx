@@ -31,7 +31,7 @@ export default function About() {
               <img src={Img} alt=""  />
 
               <div className="about-badge">
-                <div className="about-badge-num">28+</div>
+                <div className="about-badge-num">8</div>
                 <div className="about-badge-text">Years of<br />Excellence</div>
               </div>
             </div>

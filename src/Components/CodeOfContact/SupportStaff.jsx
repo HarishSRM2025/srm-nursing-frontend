@@ -1,7 +1,6 @@
 import { BsCardChecklist } from "react-icons/bs";
 import { FaTools,FaHandshake,FaUsers,FaCalendarCheck,FaLock,FaBan,FaRegClock,FaRegEye,FaRegCheckCircle,FaShieldAlt,FaBalanceScale,FaSeedling } from "react-icons/fa";
 import Img1 from "../../assets/images/CodeOfConduct/COCForSupportStaffs/1.JPG"
-import Img2 from "../../assets/images/CodeOfConduct/COCForSupportStaffs/2.png"
 
 
 export default function SupportStaff(){
@@ -50,13 +49,8 @@ export default function SupportStaff(){
           environment at all times.
         </p>
       </div>
-      <div className="grid-2col coc-img-grid">
-        <div className="img-card">
-          <img src={Img1} alt="Support team" />
-        </div>
-        <div className="img-card">
-          <img src={Img2} alt="Teamwork" />
-        </div>
+      <div className="img-card" style={{ width: "100%", height: 320 }}>
+        <img src={Img1} alt="Support team" />
       </div>
     </div>
  

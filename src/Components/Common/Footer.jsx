@@ -87,10 +87,10 @@ export function Footer() {
           <div className="footer-col">
             <h4>Contact Info</h4>
             <ul>
-              <li><a href="#"><FaMapMarkerAlt /> 45, Medical College Road, Trichy – 620 019</a></li>
-              <li><a href="tel:+914312456789"><FaPhoneAlt /> +91 431 245 6789</a></li>
-              <li><a href="mailto:admissions@nightingalecollege.edu.in"><FaEnvelope /> admissions@nightingalecollege.edu.in</a></li>
-              <li><a href="#"><FaClock /> Mon – Sat: 9 AM – 5 PM</a></li>
+              <li><a href="#"><FaMapMarkerAlt /> SRM Trichy College of Nursing, Irungalur Village, Manachannallur Taluk, near Toll Booth, Tiruchirappalli, Tamilnadu 621105</a></li>
+              <li><a href="tel:+919585228600"><FaPhoneAlt /> +91 9585228600 </a></li>
+              <li><a href="mailto:principal@nc.srmtrichy.edu.in"><FaEnvelope /> principal@nc.srmtrichy.edu.in</a></li>
+              <li><a href="#"><FaClock /> Mon – Fri: 9 AM – 5 PM & Sat: 9 AM – 3 PM</a></li>
             </ul>
           </div>
         </div>

@@ -27,16 +27,7 @@ export default function Principal(){
     <section id="principal" className="coc-principal-section">
     <div className="coc-principal-container">
 
-      <div className="coc-principal-banner">
-        <img
-          src={Img}
-          alt="Institution"
-          className="coc-principal-banner-img"
-        />
-
-        <div className="coc-principal-banner-overlay" />
-
-        <div className="coc-principal-banner-content">
+      <div className="grid-2col coc-header-row" style={{ alignItems: "center" }}>
           <div>
             <div className={`section-chip white`}><FaRegBuilding style={{ fontSize: 12 }} /> Leadership Standards</div>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(22px,4vw,42px)", fontWeight: 900, color: "white", lineHeight: 1.2, marginBottom: 10 }}>
@@ -46,6 +37,8 @@ export default function Principal(){
               The Principal sets the tone for institutional culture. These guidelines govern leadership conduct at the highest level of our organisation.
             </p>
           </div>
+        <div className="img-card" style={{ width: "100%", height: 320 }}>
+          <img src={Img} alt="Institution" />
         </div>
       </div>
 
