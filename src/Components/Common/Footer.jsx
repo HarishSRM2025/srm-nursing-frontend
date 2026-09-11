@@ -45,7 +45,7 @@ export function Footer() {
             <Link to="/" className="footer-logo">
               <img src={LogoImg} alt="SRM College of Nursing Excellence" className="footer-logo-img" />
             </Link>
-            <p>Dedicated to shaping compassionate, competent, and ethically grounded nursing professionals since 1996. NAAC Grade A | INC Recognized.</p>
+            <p>Dedicated to shaping compassionate, competent, and ethically grounded nursing professionals since 2018.INC Recognized.</p>
             <div className="footer-social">
               {socialLinks.map((item) => (
                 <a
