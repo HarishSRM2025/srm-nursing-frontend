@@ -633,9 +633,22 @@
   pointer-events: none;
 }
 
-.nav-flyout:hover > .nav-facility-links,
-.nav-flyout:focus-within > .nav-facility-links {
+.nav-flyout.is-open > .nav-facility-links {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+}
+
+/* Nested Status categories and their PDFs must extend beyond the parent menu. */
+.nav-menu .dropdown,
+.nav-menu .nav-flyout {
+  overflow: visible;
+}
+
+.nav-flyout > .nav-facility-links {
+  z-index: 1000;
+}
+
+.facility-trigger > span {
+  flex: 1;
 }

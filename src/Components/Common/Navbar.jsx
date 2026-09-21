@@ -28,11 +28,86 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import axios from "axios";
 import { FaBuildingLock } from "react-icons/fa6";
 
+function DesktopSubmenu({ label, content, active, children }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      className={`nav-facilities-group nav-flyout${open ? ' is-open' : ''}`}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+      }}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          event.stopPropagation();
+          setOpen(false);
+          event.currentTarget.querySelector('button')?.focus();
+        }
+      }}
+    >
+      <button
+        type="button"
+        className={`facility-trigger${active ? ' active' : ''}`}
+        aria-label={label}
+        aria-expanded={open}
+        onClick={() => setOpen(true)}
+      >
+        {content}<FaChevronRight className="facility-chevron" />
+      </button>
+      <div className="nav-facility-links" hidden={!open}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export default function Navbar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [ocOpen, setOcOpen] = useState(false);
   const [newsletters, setNewsletters] = useState([]);
+  const [statutes, setStatutes] = useState([]);
+  const [affiliations, setAffiliations] = useState([]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/affiliation`, { signal: controller.signal })
+      .then(({ data }) => setAffiliations(Array.isArray(data) ? data : []))
+      .catch((error) => {
+        if (!axios.isCancel(error)) console.error('Error fetching affiliations:', error);
+      });
+    return () => controller.abort();
+  }, []);
+
+  const affiliationLinks = affiliations
+    .filter((item) => item.status === 'active')
+    .map((item) => ({
+      icon: <FaCertificate />,
+      label: item.title,
+      href: `${import.meta.env.VITE_BACKEND_API_URL}/uploads/${encodeURIComponent(item.fileName)}`,
+      external: true,
+    }));
+
+  useEffect(() => {
+    const controller = new AbortController();
+    axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/statutes`, { signal: controller.signal })
+      .then(({ data }) => setStatutes(Array.isArray(data) ? data : []))
+      .catch((error) => {
+        if (!axios.isCancel(error)) console.error('Error fetching statutory disclosures:', error);
+      });
+    return () => controller.abort();
+  }, []);
+
+  const disclosureLinks = statutes
+    .filter((item) => item.status === 'active')
+    .map((item) => ({
+      icon: <FaCertificate />,
+      label: item.title,
+      href: `${import.meta.env.VITE_BACKEND_API_URL}/uploads/${encodeURIComponent(item.fileName)}`,
+      external: true,
+    }));
 
   // Fetch newsletters on mount
   useEffect(() => {
@@ -76,7 +151,17 @@ export default function Navbar() {
       children: [
         { icon: <FaBook />, label: "Overview", href: "/academics" },
         { icon: <FaUniversity />, label: "Department", href: "/departments" },
-        { icon: <FaCertificate />, label: "Status (Affiliation)", href: "" },
+        {
+          icon: <FaCertificate />,
+          label: "Status (Affiliation)",
+          children: [{
+            label: "Affiliation",
+            children: affiliationLinks.length ? affiliationLinks : [{ label: "No documents available", href: "" }],
+          }, {
+            label: "Statutory Disclosure",
+            children: disclosureLinks.length ? disclosureLinks : [{ label: "No documents available", href: "" }],
+          }],
+        },
         { icon: <FaCalendarAlt />, label: "Academic Calendar", href: academicCalendarPdf, external: true },
         { icon: <FaTrophy />, label: "Awards and Achievements", href: "" },
         { icon: <FaHandsHelping />, label: "Committees and Clubs", href: "/clubs" },
@@ -155,14 +240,9 @@ export default function Navbar() {
 
     if (child.children && !mobile) {
       return (
-        <div key={child.label} className="nav-facilities-group nav-flyout">
-          <button type="button" className={`facility-trigger${isParentActive(child) ? " active" : ""}`}>
-            {content}<FaChevronRight className="facility-chevron" />
-          </button>
-          <div className="nav-facility-links">
-            {child.children.map((item) => renderChild(item))}
-          </div>
-        </div>
+        <DesktopSubmenu key={child.label} label={child.label} content={content} active={isParentActive(child)}>
+          {child.children.map((item) => renderChild(item))}
+        </DesktopSubmenu>
       );
     }
 
