@@ -4,9 +4,8 @@ import {
 } from 'react-icons/fi';
 
 const stats = [
-  { icon: <FiGrid />, number: '9', suffix: '+', label: 'World-Class Facilities' },
   { icon: <FiUsers />, number: '500', suffix: '+', label: 'Students Benefiting' },
-  { icon: <FiAward />, number: '26', suffix: '+', label: 'Years of Excellence' },
+  { icon: <FiAward />, number: '8', suffix: ' ', label: 'Years of Excellence' },
   { icon: <FiCalendar />, number: '100', suffix: '%', label: 'Campus Placement Support' },
 ];
 

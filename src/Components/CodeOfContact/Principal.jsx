@@ -1,107 +1,40 @@
-import { FaGlobe, FaChartLine, FaRegStar, FaMicroscope, FaRunning, FaRegLightbulb, FaSeedling,FaFlask,FaUniversity, FaRegBuilding, FaStar } from "react-icons/fa";
-import { MdSchool } from "react-icons/md";
-import { FaUsers } from "react-icons/fa";
-import { FaHandshake } from "react-icons/fa6";
-import Img from "../../assets/images/CodeOfConduct/COCForPrincipal/1.jpeg"
+import { FaRegBuilding } from 'react-icons/fa';
+import Img from '../../assets/images/CodeOfConduct/COCForPrincipal/1.jpeg';
+import sections from './conductContent.json';
+import RuleCard from './RuleCard';
 
-export default function Principal(){
-  const rules = [
-    [<FaGlobe />, "Recognise common institutional objectives and lead with vision."],
-    [<FaUsers />, "Treat all employees equally and without bias or favouritism."],
-    [<FaChartLine />, "Promote personal financial transparency and accountability."],
-    [<FaRegStar />, "Promote professional behaviour and lead by personal example."],
-    [<MdSchool />, "Encourage faculty conferences, workshops and staff development."],
-    [<FaMicroscope />, "Encourage research publications and academic contributions."],
-    [<FaRunning />, "Support extracurricular activities for holistic student development."],
-    [<FaRegLightbulb />, "Promote decentralisation of authority and collaborative decisions."],
-    [<FaSeedling />, "Maintain a healthy, inclusive, and inspiring academic atmosphere."],
-  ];
-  const pillars = [
-    { icon: <FaHandshake />, title: "Equality & Fairness", desc: "Every stakeholder receives equal treatment regardless of background, position or seniority.", c: "var(--teal-light)" },
-    { icon: <FaFlask />, title: "Innovation & Research", desc: "Foster a culture of continuous learning, innovation and evidence-based academic practice.", c: "#a29bfe" },
-    { icon: <FaStar />, title: "Academic Excellence", desc: "Uphold and continuously improve the standards that have defined SRM since 1996.", c: "#fd79a8" },
-    { icon: <FaSeedling />, title: "Healthy Environment", desc: "Sustain a positive, inclusive atmosphere that supports growth for every member.", c: "#55efc4" },
-  ];
+export default function Principal() {
+  const data = sections.find(s => s.id === 'principal');
 
   return (
-    <section id="principal" className="coc-principal-section">
-    <div className="coc-principal-container">
+    <section id="principal" className="coc-section" style={{ background: 'white' }}>
+      <div className="coc-container">
 
-      <div className="grid-2col coc-header-row" style={{ alignItems: "center" }}>
-          <div>
-            <div className={`section-chip white`}><FaRegBuilding style={{ fontSize: 12 }} /> Leadership Standards</div>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(22px,4vw,42px)", fontWeight: 900, color: "white", lineHeight: 1.2, marginBottom: 10 }}>
-              Code of Conduct<br /><span style={{ color: "var(--teal-light)" }}>for the Principal</span>
-            </h2>
-            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "clamp(12px,1.6vw,15px)", maxWidth: 480, lineHeight: 1.7 }}>
-              The Principal sets the tone for institutional culture. These guidelines govern leadership conduct at the highest level of our organisation.
-            </p>
-          </div>
-        <div className="img-card" style={{ width: "100%", height: 320 }}>
-          <img src={Img} alt="Institution" />
-        </div>
-      </div>
-
-      <div className="coc-principal-grid">
-
-        <div className="coc-principal-rules-card">
-          <div className="coc-principal-rules-header">
-            <div className="coc-principal-rules-icon">
-              <FaUniversity />
-            </div>
-
-            <div>
-              <h3 className="coc-principal-rules-title">
-                Principal's Responsibilities
-              </h3>
-
-              <p className="coc-principal-rules-count">
-                {rules.length} guiding leadership principles
-              </p>
-            </div>
-          </div>
-
-          <div className="coc-principal-rules-list">
-            {rules.map(([icon, text], i) => (
-              <div key={i} className="coc-principal-rule-item">
-                <div className="coc-principal-rule-icon">
-                  <span>{icon}</span>
-                </div>
-
-                <span className="coc-principal-rule-text">
-                  {text}
-                </span>
-              </div>
-            ))}
+        {/* Full-width Image Hero */}
+        <div className="coc-hero">
+          <img src={Img} alt="Principal leadership and governance" />
+          <div className="coc-hero__overlay"
+            style={{ background: 'linear-gradient(to right, rgba(47,27,92,0.92) 0%, rgba(75,46,131,0.55) 55%, transparent 100%)' }}
+          />
+          <div className="coc-hero__content">
+            <div className="section-chip white"><FaRegBuilding style={{ fontSize: 12 }}/> Principal</div>
+            <h2 className="coc-hero__title">Code of Conduct<br/><span>for the Principal</span></h2>
+            <p className="coc-hero__subtitle">{data.intro}</p>
           </div>
         </div>
 
-        <div className="coc-principal-pillars">
-          {pillars.map((p, i) => (
-            <div key={i} className="coc-principal-pillar-card">
-              <div className="coc-principal-pillar-icon">
-                <span style={{ color: p.c }}>{p.icon}</span>
-              </div>
-
-              <div>
-                <h4
-                  className="coc-principal-pillar-title"
-                  style={{ color: p.c }}
-                >
-                  {p.title}
-                </h4>
-
-                <p className="coc-principal-pillar-desc">
-                  {p.desc}
-                </p>
-              </div>
-            </div>
+        {/* Uniform 2-Column Rules Grid (1 to 10) */}
+        <div className="coc-rules-grid">
+          {data.rules.map(rule => (
+            <RuleCard
+              key={rule.num}
+              num={rule.num}
+              text={rule.text}
+              numClass="teal"
+            />
           ))}
         </div>
-
       </div>
-    </div>
-  </section>
-    
+    </section>
   );
-};
+}

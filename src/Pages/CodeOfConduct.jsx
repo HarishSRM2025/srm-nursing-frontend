@@ -1,3 +1,4 @@
+import DisciplinaryCommittee from '../Components/CodeOfContact/DisciplinaryCommittee';
 import QuickNav from '../Components/CodeOfContact/QuickNav';
 import Students from '../Components/CodeOfContact/Students';
 import DressCode from '../Components/CodeOfContact/DressCode';
@@ -16,6 +17,7 @@ export default function CodeOfConduct_Responsive() {
     <>
       <Breadcrum title="Code of Conduct"/>
       <QuickNav/>
+      <DisciplinaryCommittee />
       <Students />
       <DressCode />
       <AntiRagging />

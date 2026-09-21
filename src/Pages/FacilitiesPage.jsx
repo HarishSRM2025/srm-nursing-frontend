@@ -13,7 +13,7 @@ const FacilitiesPage = () => {
     <>
       <Breadcrum title={"Facilities"} />
       <FacOverview />
-      <FacStats />
+      {/* <FacStats /> */}
       <FacGrid />
       {/* <FacFeatureSpotlight/> */}
       {/* <FacTestimonials /> */}

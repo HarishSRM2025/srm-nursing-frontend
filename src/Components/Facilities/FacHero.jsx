@@ -38,17 +38,17 @@ const FacHero = () => {
             <div className="fac-hero__stat-label">Facility Types</div>
           </div>
           <div className="fac-hero__stat-item">
-            <div className="fac-hero__stat-number">26<span>+</span></div>
+            <div className="fac-hero__stat-number">8</div>
             <div className="fac-hero__stat-label">Years Excellence</div>
           </div>
           <div className="fac-hero__stat-item">
             <div className="fac-hero__stat-number">500<span>+</span></div>
             <div className="fac-hero__stat-label">Students Enrolled</div>
           </div>
-          <div className="fac-hero__stat-item">
+          {/* <div className="fac-hero__stat-item">
             <div className="fac-hero__stat-number">4<span>★</span></div>
             <div className="fac-hero__stat-label">NAAC Accredited</div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

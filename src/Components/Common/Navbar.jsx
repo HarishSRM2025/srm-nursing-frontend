@@ -5,21 +5,22 @@ import academicCalendarPdf from '../../PDF/Academic_Calendar_2026.pdf';
 import eventCalendarPdf from '../../PDF/Event _Calendar_2026.pdf';
 import {
   FaHospitalUser,
-  FaChevronDown,
-  FaCommentDots,
-  FaUserTie,
-  FaUsers,
-  FaSitemap,
-  FaGraduationCap,
-  FaBook,
-  FaFlask,
-  FaFileAlt,
+  FaNewspaper,
+  FaCalendarAlt,
+  FaCalendarCheck,
+  FaUniversity,
+  FaHospital,
   FaBed,
+  FaBus,
+  FaCertificate,
+  FaTrophy,
+  FaChevronDown,
+  FaChevronRight,
+  FaSitemap,
+  FaBook,
   FaHandsHelping,
-  FaRunning,
   FaBars,
   FaTimes,
-  FaPaperPlane,
   FaTree,
 } from "react-icons/fa";
 import { IoManSharp } from "react-icons/io5";
@@ -56,63 +57,56 @@ export default function Navbar() {
       children: [
         { icon: <FaSitemap />, label: "Organogram", href: organogramPdf, external: true },
         { icon: <IoManSharp />, label: "Code of Conduct", href: "/code-of-conduct" },
+        {
+          icon: <FaBuildingLock />,
+          label: "Facilities",
+          href: "/facilities",
+          children: [
+            { icon: <FaUniversity />, label: "College / Classroom / Lab / Library", href: "/facilities" },
+            { icon: <FaHospital />, label: "Hospital / Clinical", href: "" },
+            { icon: <FaBed />, label: "Hostel", href: "" },
+            { icon: <FaBus />, label: "Transport", href: "" },
+            { icon: <FaTree />, label: "Green Campus", href: "/green-campus" },
+          ],
+        },
       ],
     },
     {
       label: "Academics",
       children: [
-        { icon: <FaBook />, label: "Academics Overview", href: "/academics" },
-        { icon: <FaBook />, label: "Departments", href: "/departments" },
-        { icon: <FaBook />, label: "Academic Calendar", href: academicCalendarPdf, external: true },
+        { icon: <FaBook />, label: "Overview", href: "/academics" },
+        { icon: <FaUniversity />, label: "Department", href: "/departments" },
+        { icon: <FaCertificate />, label: "Status (Affiliation)", href: "" },
+        { icon: <FaCalendarAlt />, label: "Academic Calendar", href: academicCalendarPdf, external: true },
+        { icon: <FaTrophy />, label: "Awards and Achievements", href: "" },
+        { icon: <FaHandsHelping />, label: "Committees and Clubs", href: "/clubs" },
       ],
     },
-    {
-      label: "Campus Life",
-      children:[
-        { icon: <FaBuildingLock/>,label:"Facilities",href:"/facilities", },
-        { icon:<FaTree/>,label:"Green Campus",href:"/green-campus", },
-        // { icon:<FaHandsHelping/>,label:"Associations",href:"/associations" }
-        { icon: <FaHandsHelping />, label: "Associations", href: "/clubs" },
-
-      ]      
-    },
+    { label: "CNE", href: "" },
     { label: "Placement", href: "/placements" },
     { label: "Research", href: "/research" },
     {
       label: "Events",
       children: [
-        { icon: <FaBook />, label: "All Events", href: "/events" },
-        { icon: <FaBook />, label: "Event Calendar", href: eventCalendarPdf, external: true },
+        { icon: <FaCalendarCheck />, label: "All Events", href: "/events" },
+        { icon: <FaCalendarAlt />, label: "Event Calendar", href: eventCalendarPdf, external: true },
       ],
     },
-    { label: "Contact", href: "/contact" },
     
   ];
 
   const newsletterLink = {
-    label: "Newsletters",
+    label: "Newsletter",
     children: newsletters
       .filter((nl) => nl.status === "active")
       .map((nl) => ({
-        icon: <FaBook />,
+        icon: <FaNewspaper />,
         label: nl.title,
         href: `${import.meta.env.VITE_BACKEND_API_URL}/uploads/${nl.fileName}`,
       })),
   };
 
   const navLinks = [...staticLinks.slice(0, 6), newsletterLink, ...staticLinks.slice(6)];
-
-  // Determine active parent index
-  const activeParentIndex = navLinks.findIndex((link) =>
-    link.children && link.children.some((child) => {
-      if (!child.href) return false;
-      return child.href.startsWith("#")
-        ? location.pathname === "/" && location.hash === child.href
-        : location.pathname === child.href;
-    })
-  );
-
-  const [openSub, setOpenSub] = useState(activeParentIndex !== -1 ? activeParentIndex : null);
 
   const isLinkActive = (href) => {
     if (!href) return false;
@@ -125,8 +119,11 @@ export default function Navbar() {
   const isParentActive = (link) => {
     if (!link) return false;
     if (isLinkActive(link.href)) return true;
-    return link.children?.some((child) => isLinkActive(child.href));
+    return link.children?.some((child) => isParentActive(child));
   };
+
+  const activeParentIndex = navLinks.findIndex((link) => link.children && isParentActive(link));
+  const [openSub, setOpenSub] = useState(activeParentIndex !== -1 ? activeParentIndex : null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -153,6 +150,51 @@ export default function Navbar() {
     setOcOpen(false);
   };
 
+  const renderChild = (child, mobile = false) => {
+    const content = <>{child.icon}<span>{child.label}</span></>;
+
+    if (child.children && !mobile) {
+      return (
+        <div key={child.label} className="nav-facilities-group nav-flyout">
+          <button type="button" className={`facility-trigger${isParentActive(child) ? " active" : ""}`}>
+            {content}<FaChevronRight className="facility-chevron" />
+          </button>
+          <div className="nav-facility-links">
+            {child.children.map((item) => renderChild(item))}
+          </div>
+        </div>
+      );
+    }
+
+    if (child.children) {
+      return (
+        <details key={child.label} className="nav-facilities-group">
+          <summary className={isParentActive(child) ? "active" : ""}>
+            {content}<FaChevronDown className="facility-chevron" />
+          </summary>
+          <div className="nav-facility-links">
+            {child.children.map((item) => renderChild(item, mobile))}
+          </div>
+        </details>
+      );
+    }
+    let entry;
+
+    if (!child.href) {
+      entry = <a href="" aria-disabled="true" onClick={(e) => e.preventDefault()}>{content}</a>;
+    } else if (child.external || child.href.startsWith("http")) {
+      entry = <a href={child.href} target="_blank" rel="noopener noreferrer" onClick={() => mobile && setOcOpen(false)}>{content}</a>;
+    } else {
+      entry = <NavLink to={child.href} className={({ isActive }) => isActive ? "active" : ""} onClick={() => mobile && setOcOpen(false)}>{content}</NavLink>;
+    }
+
+    return (
+      <div key={child.label}>
+        {entry}
+      </div>
+    );
+  };
+
   return (
     <>
       <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
@@ -173,6 +215,10 @@ export default function Navbar() {
                   <a href="#!" className={`nav-link${isParentActive(link) ? " active" : ""}`} onClick={(e) => e.preventDefault()}>
                     {link.label}
                     <FaChevronDown className="nav-chevron" />
+                  </a>
+                ) : !link.href ? (
+                  <a href="" className="nav-link" aria-disabled="true" onClick={(e) => e.preventDefault()}>
+                    {link.label}
                   </a>
                 ) : link.href?.startsWith("#") ? (
                   <a
@@ -196,45 +242,14 @@ export default function Navbar() {
                 )}
                 {link.children && (
                   <div className="dropdown">
-                    {link.children.map((child) => (
-                      child.href?.startsWith("#") ? (
-                        <a
-                          key={child.label}
-                          href={child.href}
-                          className={isLinkActive(child.href) ? "active" : ""}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleAnchor(child.href);
-                          }}
-                        >
-                          {child.icon} {child.label}
-                        </a>
-                      ) : child.external || child.href?.startsWith("http") ? (
-                        <a
-                          key={child.label}
-                          href={child.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {child.icon} {child.label}
-                        </a>
-                      ) : (
-                        <NavLink
-                          key={child.label}
-                          to={child.href}
-                          className={({ isActive }) => (isActive ? "active" : "")}
-                        >
-                          {child.icon} {child.label}
-                        </NavLink>
-                      )
-                    ))}
+                    {link.children.map((child) => renderChild(child))}
                   </div>
                 )}
               </li>
             ))}
             <li>
               <a href="#contact" className="nav-cta" onClick={(e) => { e.preventDefault(); handleAnchor("#contact"); }}>
-                <FaPaperPlane /> Apply Now
+                Apply Now
               </a>
             </li>
           </ul>
@@ -277,6 +292,10 @@ export default function Navbar() {
                     {link.label}
                     <FaChevronDown className="oc-chevron" />
                   </a>
+                ) : !link.href ? (
+                  <a href="" className="nav-link" aria-disabled="true" onClick={(e) => e.preventDefault()}>
+                    {link.label}
+                  </a>
                 ) : link.href?.startsWith("#") ? (
                   <a
                     href={link.href}
@@ -300,40 +319,7 @@ export default function Navbar() {
                 )}
                 {link.children && (
                   <div className={`offcanvas-sub${openSub === i ? " open" : ""}`}>
-                    {link.children.map((child) => (
-                      child.href?.startsWith("#") ? (
-                        <a
-                          key={child.label}
-                          href={child.href}
-                          className={isLinkActive(child.href) ? "active" : ""}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleAnchor(child.href);
-                          }}
-                        >
-                          {child.label}
-                        </a>
-                      ) : child.external || child.href?.startsWith("http") ? (
-                        <a
-                          key={child.label}
-                          href={child.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => setOcOpen(false)}
-                        >
-                          {child.label}
-                        </a>
-                      ) : (
-                        <NavLink
-                          key={child.label}
-                          to={child.href}
-                          className={({ isActive }) => (isActive ? "active" : "")}
-                          onClick={() => setOcOpen(false)}
-                        >
-                          {child.label}
-                        </NavLink>
-                      )
-                    ))}
+                    {link.children.map((child) => renderChild(child, true))}
                   </div>
                 )}
               </li>
@@ -343,7 +329,7 @@ export default function Navbar() {
 
         <div className="offcanvas-footer">
           <Link to="#contact" onClick={(e) => { e.preventDefault(); handleAnchor("#contact"); }}>
-            <FaPaperPlane /> Apply for Admission
+            Apply for Admission
           </Link>
         </div>
       </aside>
