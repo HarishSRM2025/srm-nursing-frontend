@@ -777,9 +777,14 @@
   font-weight: bold;
 }
 
+.event-detail-hero__swiper .swiper-button-prev svg,
+.event-detail-hero__swiper .swiper-button-next svg {
+  width: 14px;
+  height: 14px;
+}
+
 .event-detail-hero__swiper .swiper-button-prev:hover,
 .event-detail-hero__swiper .swiper-button-next:hover {
   background: var(--accent);
   color: var(--white) !important;
 }
-
