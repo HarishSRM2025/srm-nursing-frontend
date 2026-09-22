@@ -1,17 +1,18 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import EventSearchBar from '../Components/Events/EventSearchBar';
 import EventSidebar from '../Components/Events/EventSidebar';
 import EventGrid from '../Components/Events/EventGrid';
 import EventPagination from '../Components/Events/EventPagination';
-import { eventsData as fallbackEvents } from '../Data/eventsData';
+
 import '../Styles/events.css';
 import Breadcrum from '../Components/Common/Breadcrum';
 
 const ITEMS_PER_PAGE = 6;
 const API_URL = import.meta.env.VITE_BACKEND_API_URL || 'http://localhost:5000';
 
-const EventsPage = () => {
+const EventsPage = ({ scope = 'events' }) => {
+  const pageTitle = scope === 'cne' ? 'CNE' : 'Events';
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,19 +24,35 @@ const EventsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
+  const [pagination, setPagination] = useState({ page: 1, total: 0, totalPages: 1 });
+  const [filters, setFilters] = useState({ categories: [], years: [], total: 0 });
+  const [error, setError] = useState('');
+  const [retry, setRetry] = useState(0);
+
   useEffect(() => {
+    const controller = new AbortController();
+    setLoading(true);
+    setError('');
     const fetchEvents = async () => {
       try {
-        const res = await axios.get(`${API_URL}/api/events/get-all-events`);
+        const res = await axios.get(API_URL + '/api/events/get-all-events', {
+          signal: controller.signal,
+          params: { scope, page: currentPage, limit: ITEMS_PER_PAGE, search: searchQuery,
+            category: activeCategory === 'all' ? '' : activeCategory, year: activeYear,
+            month: activeMonth, tags: activeTags.join(','), activeOnly: 'true', includeFilters: 'true' }
+        });
+        if (controller.signal.aborted) return;
+        setPagination(res.data.pagination);
+        setFilters(res.data.filters);
         if (res.data && Array.isArray(res.data.events)) {
           // Map backend events to match properties expected by frontend components
           const mapped = res.data.events
             .filter(ev => ev.isActive !== "INACTIVE")
             .map(ev => {
               const startDateObj = ev.startDate ? new Date(ev.startDate) : new Date();
-              const day = String(startDateObj.getDate()).padStart(2, '0');
-              const month = startDateObj.toLocaleString('en-US', { month: 'short' });
-              const year = String(startDateObj.getFullYear());
+              const day = startDateObj.toLocaleString('en-GB', { day: '2-digit', timeZone: 'Asia/Kolkata' });
+              const month = startDateObj.toLocaleString('en-US', { month: 'short', timeZone: 'Asia/Kolkata' });
+              const year = startDateObj.toLocaleString('en-GB', { year: 'numeric', timeZone: 'Asia/Kolkata' });
 
               let imgSource = "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80";
               if (ev.image && ev.image.length > 0) {
@@ -46,7 +63,7 @@ const EventsPage = () => {
               return {
                 id: ev._id,
                 title: ev.title || "",
-                category: ev.category || "Events",
+                category: ev.category || "Uncategorized",
                 date: `${day} ${month} ${year}`,
                 day,
                 month,
@@ -66,53 +83,20 @@ const EventsPage = () => {
           setEvents([]);
         }
       } catch (err) {
-        console.error("Error fetching events:", err);
-        // Fallback mapping
-        const fallbackMapped = fallbackEvents.map(ev => ({
-          ...ev,
-          id: String(ev.id)
-        }));
-        setEvents(fallbackMapped);
+        if (!controller.signal.aborted) {
+          setEvents([]);
+          setError(err.response?.data?.message || 'Unable to load events. Please try again.');
+        }
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       }
     };
-    fetchEvents();
-  }, []);
+    const timer = setTimeout(fetchEvents, 250);
+    return () => { clearTimeout(timer); controller.abort(); };
+  }, [scope, currentPage, searchQuery, activeCategory, activeYear, activeMonth, activeTags, retry]);
 
-  const featuredEvent = useMemo(() => {
-    return events.find(e => e.status === 'Upcoming') || events[0] || null;
-  }, [events]);
-
-  const filteredEvents = useMemo(() => {
-    return events.filter(ev => {
-      const matchSearch =
-        !searchQuery ||
-        ev.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        ev.description.toLowerCase().includes(searchQuery.toLowerCase());
-
-      const matchCategory =
-        activeCategory === 'all' || ev.category === activeCategory;
-
-      const matchYear =
-        !activeYear || ev.year === activeYear;
-
-      const matchMonth =
-        !activeMonth || ev.month === activeMonth;
-
-      const matchTags =
-        activeTags.length === 0 ||
-        activeTags.some(t => ev.tags?.includes(t));
-
-      return matchSearch && matchCategory && matchYear && matchMonth && matchTags;
-    });
-  }, [events, searchQuery, activeCategory, activeYear, activeMonth, activeTags]);
-
-  const totalPages = Math.ceil(filteredEvents.length / ITEMS_PER_PAGE);
-  const paginatedEvents = filteredEvents.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  );
+  const totalPages = pagination.totalPages;
+  const page = pagination.page;
 
   const handleClearAll = () => {
     setSearchQuery('');
@@ -123,27 +107,17 @@ const EventsPage = () => {
     setCurrentPage(1);
   };
 
-  if (loading) {
-    return (
-      <div>
-        <Breadcrum title="Events" subtitle="Home / Events" />
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '40vh', color: 'var(--primary)', fontWeight: 'bold' }}>
-          Loading events...
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div>
-      <Breadcrum title="Events" subtitle="Home / Events" />
+      <Breadcrum title={pageTitle} subtitle={`Home / ${pageTitle}`} />
       {/* Sticky search bar */}
       <EventSearchBar
         searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
+        setSearchQuery={(value) => { setSearchQuery(value); setCurrentPage(1); }}
         viewMode={viewMode}
         setViewMode={setViewMode}
-        resultCount={filteredEvents.length}
+        resultCount={pagination.total}
         onMobileFilter={() => setMobileSidebarOpen(p => !p)}
       />
 
@@ -158,9 +132,10 @@ const EventsPage = () => {
           activeMonth={activeMonth}
           setActiveMonth={(val) => { setActiveMonth(val); setCurrentPage(1); }}
           activeTags={activeTags}
-          setActiveTags={setActiveTags}
+          setActiveTags={(value) => { setActiveTags(value); setCurrentPage(1); }}
           onClearAll={handleClearAll}
-          featuredEvent={featuredEvent}
+          filters={filters}
+          allLabel={scope === 'cne' ? 'All CNE' : 'All Events'}
           events={events}
           className={mobileSidebarOpen ? 'mobile-open' : ''}
         />
@@ -168,21 +143,21 @@ const EventsPage = () => {
         {/* Main content */}
         <main className="event-main">
           {/* Main Grid */}
-          <EventGrid
-            events={paginatedEvents}
+          {loading ? <p role="status">Loading events...</p> : error ? <div role="alert"><p>{error}</p><button onClick={() => setRetry(value => value + 1)}>Retry</button></div> : <EventGrid
+            events={events}
             viewMode={viewMode}
             sectionTitle={searchQuery || activeCategory !== 'all' || activeYear || activeMonth || activeTags.length > 0
               ? 'Search Results'
-              : 'All Events'}
+              : `All ${pageTitle}`}
             eyebrow={searchQuery || activeCategory !== 'all' || activeYear || activeMonth || activeTags.length > 0
-              ? `${filteredEvents.length} found`
+              ? `${pagination.total} found`
               : 'Browse'}
-          />
+          />}
 
           {/* Pagination */}
-          {totalPages > 1 && (
+          {!loading && !error && totalPages > 1 && (
             <EventPagination
-              currentPage={currentPage}
+              currentPage={page}
               totalPages={totalPages}
               onPageChange={(p) => { setCurrentPage(p); window.scrollTo({ top: 400, behavior: 'smooth' }); }}
             />

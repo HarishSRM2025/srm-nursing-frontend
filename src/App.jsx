@@ -16,6 +16,7 @@ import DepartmentsPage from './Pages/DepartmentsPage'
 import GreenCampusPage from './Pages/GreenCampusPage'
 import ContactPage from './Pages/ContactPage'
 import EventsPage from './Pages/EventsPage'
+import CNEPage from './Pages/CNEPage'
 import EventDetailPage from './Pages/EventDetailPage'
 import ClubsPage from './Pages/ClubsPage'
 
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<EventsPage/>} />
+        <Route path="/cne" element={<CNEPage/>} />
         <Route path="/events/:id" element={<EventDetailPage/>} />
         <Route path="/code-of-conduct" element={<CodeOfConduct_Responsive />} />
         <Route path="/associations" element={<AssociationsPage />} />

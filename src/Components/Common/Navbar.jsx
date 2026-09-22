@@ -167,7 +167,7 @@ export default function Navbar() {
         { icon: <FaHandsHelping />, label: "Committees and Clubs", href: "/clubs" },
       ],
     },
-    { label: "CNE", href: "" },
+    { label: "CNE", href: "/cne" },
     { label: "Placement", href: "/placements" },
     { label: "Research", href: "/research" },
     {

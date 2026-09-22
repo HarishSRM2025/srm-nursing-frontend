@@ -11,7 +11,8 @@ const EventSidebar = ({
   activeTags, setActiveTags,
   onClearAll,
   featuredEvent,
-  events = []
+  filters = { categories: [], years: [], total: 0 },
+  allLabel = 'All Events'
 }) => {
 
   const toggleTag = (tag) => {
@@ -21,30 +22,10 @@ const EventSidebar = ({
   };
 
 const displayCategories = [
-  {
-    id: "all",
-    label: "All Events",
-    count: events.length,
-  },
-  ...Array.from(new Set(events.map(event => event.category)))
-    .filter(Boolean)
-    .map(category => ({
-      id: category,
-      label: category,
-      count: events.filter(event => event.category === category).length,
-    })),
+  { id: 'all', label: allLabel, count: filters.total },
+  ...filters.categories.map(category => ({ id: category.name, label: category.name, count: category.count }))
 ];
-
-const displayYears = Array.from(
-  new Set(
-    events
-      .map(event => {
-        const date = event.startDate || event.date;
-        return date ? new Date(date).getFullYear().toString() : null;
-      })
-      .filter(Boolean)
-  )
-).sort((a, b) => b - a);
+const displayYears = filters.years;
   return (
     <aside className="event-sidebar">
 
