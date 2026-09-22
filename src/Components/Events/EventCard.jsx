@@ -8,7 +8,7 @@ const EventCard = ({ event, listMode }) => {
       <div className="event-card__img-wrap">
         <img src={event.image} alt={event.title} className="event-card__img" />
         <div className="event-card__img-overlay" />
-        <span className="event-card__category">{event.category}</span>
+        {/* <span className="event-card__category">{event.category}</span> */}
         <div className="event-card__date-badge">
           <div className="event-card__date-day">{event.day}</div>
           <div className="event-card__date-mon">{event.month}</div>
