@@ -748,17 +748,38 @@
 }
 
 /* Custom Swiper pagination and navigation styles */
+.event-detail-hero__swiper .swiper-pagination {
+  left: 50%;
+  bottom: 12px;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 24px;
+  background: #2f1b5c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+}
+
 .event-detail-hero__swiper .swiper-pagination-bullet {
-  background: var(--white) !important;
-  opacity: 0.6 !important;
+  width: 10px;
+  height: 10px;
+  background: #fff !important;
+  opacity: 1 !important;
 }
 
 .event-detail-hero__swiper .swiper-pagination-bullet-active {
-  background: var(--accent) !important;
+  background: #38d9f5 !important;
   opacity: 1 !important;
   width: 20px !important;
   border-radius: 4px !important;
   transition: all 0.3s ease;
+}
+
+.event-detail-hero__swiper .swiper-pagination-bullet:focus-visible {
+  outline: 2px solid #38d9f5;
+  outline-offset: 3px;
 }
 
 .event-detail-hero__swiper .swiper-button-prev,
