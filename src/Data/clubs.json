@@ -123,9 +123,9 @@
   },
   {
     "id": "Youth Red Cross (YRC) Club",
-    "code": "07",
-    "name": "Student Wellness Club",
-    "shortName": "Student Wellness Club",
+    "code": "08",
+    "name": "Youth Red Cross (YRC) Club",
+    "shortName": "Youth Red Cross (YRC) Club",
     "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
     "color": "accent",
     "icon": "cross",
@@ -141,7 +141,7 @@
   },
   {
     "id": "Anti-Ragging Committee",
-    "code": "08",
+    "code": "09",
     "name": "Anti-Ragging Committee",
     "shortName": "Anti-Ragging Committee",
     "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
@@ -159,7 +159,7 @@
   },
   {
     "id": "Sustainable Development Goals (SDG) Cell",
-    "code": "09",
+    "code": "10",
     "name": "Sustainable Development Goals (SDG) Cell",
     "shortName": "Sustainable Development Goals (SDG) Cell",
     "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",

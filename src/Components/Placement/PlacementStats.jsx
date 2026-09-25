@@ -21,7 +21,7 @@ const stats = [
   },
   {
     icon: <FiTrendingUp />,
-    number: '98',
+    number: '100',
     suffix: '%',
     label: 'Placement Success Rate',
   },
