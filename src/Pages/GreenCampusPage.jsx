@@ -35,7 +35,7 @@ const GreenCampusPage = () => {
       <WaterTreatment />
       <PedestrianPathways />
 
-      <Certifications />
+      {/* <Certifications /> */}
       <GreenCampusGallery />
       <GreenCampusCTA />
     </main>

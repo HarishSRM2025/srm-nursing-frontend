@@ -10,7 +10,7 @@ import {
 
 /* ─── ACCREDITATIONS ─── */
 const accreds = [
-  { icon: <FaAward />, name: "NAAC", desc: "National Assessment & Accreditation Council — Grade A" },
+  // { icon: <FaAward />, name: "NAAC", desc: "National Assessment & Accreditation Council — Grade A" },
   { icon: <FaUserNurse />, name: "INC", desc: "Indian Nursing Council — Fully Recognized Institution" },
   { icon: <FaUniversity />, name: "TNDMGRU", desc: "Tamil Nadu Dr. MGR Medical University — Affiliated" },
   { icon: <FaShieldAlt />, name: "TNMC", desc: "Tamil Nadu Nurses & Midwives Council — Registered" },

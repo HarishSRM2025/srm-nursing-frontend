@@ -20,7 +20,7 @@ export default function AcademicsPage() {
       <MScNursingSection />
       <CNESection />
       <AwardsSection />
-      <AcademicCalendarSection />
+      {/* <AcademicCalendarSection /> */}
       {/* <GallerySection /> */}
       <CTASection />
     </div>
