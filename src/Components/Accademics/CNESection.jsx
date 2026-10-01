@@ -16,13 +16,7 @@ const CNE_CARDS = [
     desc: 'Regular seminars featuring leading healthcare professionals, covering emerging trends, research findings, and best practices in nursing.',
     icon: <MdGroups />,
     image: Img2,
-  },
-  {
-    title: 'Certification Programmes',
-    desc: 'Nationally accredited short-term certification courses that keep nursing professionals at the forefront of modern healthcare delivery.',
-    icon: <FiStar />,
-    image: Img3,
-  },
+  }
 ];
 
 export default function CNESection() {

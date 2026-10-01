@@ -30,6 +30,8 @@ import AntiRaggingImg from '../assets/images/Clubs/anti-ragging.png';
 import SDGImg from '../assets/images/Clubs/sdg.png';
 import Breadcrum from '../Components/Common/Breadcrum';
 import AssoYRC from '../Components/Association/AssoYRC';
+import IQAC from '../Components/Clubs/iqac';
+import ICC from '../Components/Clubs/internal-complaints-committee';
 
 // Maps the "icon" string in clubs.json to an actual icon component.
 const ICONS = {
@@ -57,6 +59,8 @@ const CLUB_IMAGES = {
   'Youth Red Cross (YRC) Club': YRCImg,
   'Anti-Ragging Committee': AntiRaggingImg,
   'Sustainable Development Goals (SDG) Cell': SDGImg,
+  'Internal Quality Assurance Cell (IQAC)': IQAC,
+  'Internal Complaints Committee': ICC,
 };
 
 function ClubSection({ club, index }) {

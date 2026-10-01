@@ -1,7 +1,78 @@
 [
+   {
+    "id": "student-wellness-club",
+    "code": "01",
+    "name": "Student Wellness Club",
+    "shortName": "Student Wellness Club",
+    "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
+    "color": "accent",
+    "icon": "heart-pulse",
+    "aim": "To promote the holistic well-being of students by fostering physical, mental, emotional, social, and spiritual wellness through education, awareness, and healthy lifestyle practices.",
+    "objectives": [
+      "To create awareness among students about the importance of maintaining their own health and promoting the health of others.",
+      "To develop a spirit of voluntary service and humanitarian values among youth.",
+      "To train students in first aid, disaster preparedness, and emergency response. ",
+      "To motivate students to participate in blood donation, organ donation, and other life-saving initiatives.",
+      "To promote leadership qualities, teamwork, discipline, and responsible citizenship.",
+      "To organize health awareness programmes, environmental protection campaigns, and community outreach activities."
+    ]
+  },
+  {
+    "id": "Anti-Ragging Committee",
+    "code": "02",
+    "name": "Anti-Ragging Committee",
+    "shortName": "Anti-Ragging Committee",
+    "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
+    "color": "accent",
+    "icon": "shield-alert",
+    "aim": "To ensure a safe, respectful, and ragging-free campus by fostering a culture of dignity, mutual respect, inclusivity, and zero tolerance towards ragging in all its forms.",
+    "objectives": [
+      "To create awareness among students, faculty, and staff about the 17 United Nations Sustainable Development Goals (SDGs) and their significance.",
+      "To integrate sustainability principles into academic, research, extension, and outreach activities.",
+      "To encourage environmentally responsible practices, including energy conservation, waste management, water conservation, and biodiversity protection.",
+      "To promote social responsibility through community engagement, health promotion, education, and outreach programmes aligned with the SDGs.",
+      "To organize seminars, workshops, awareness campaigns, and competitions on sustainable development and environmental stewardship.",
+      "To encourage research, innovation, and student projects that contribute to achieving the SDGs."
+    ]
+  },
+  
+  {
+    "id": "Sustainable Development Goals (SDG) Cell",
+    "code": "03",
+    "name": "Sustainable Development Goals (SDG) Cell",
+    "shortName": "Sustainable Development Goals (SDG) Cell",
+    "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
+    "color": "accent",
+    "icon": "globe",
+    "aim": "To promote awareness, participation, and institutional commitment towards the United Nations Sustainable Development Goals (SDGs) by integrating sustainability into education, research, community engagement, and campus practices for the holistic development of society.",
+    "objectives": [
+      "To develop a system for conscious, consistent, and continuous improvement in the academic and administrative performance of the institution.",
+      "To promote quality enhancement through innovative teaching–learning methodologies, research, extension activities, and student support services.",
+      "To facilitate the implementation of quality benchmarks in academic and administrative processes.",
+      "To encourage faculty development, professional excellence, and capacity-building initiatives."
+    ]
+  },
+
+  
+  {
+    "id": "Internal Quality Assurance Cell (IQAC)",
+    "code": "03",
+    "name": "Internal Quality Assurance Cell (IQAC)",
+    "shortName": "Internal Quality Assurance Cell (IQAC)",
+    "tagline": "Ensuring excellence in education and administration.",
+    "color": "accent",
+    "icon": "globe",
+    "aim": "To develop and sustain a culture of quality and excellence in the institution through continuous quality enhancement, academic innovation, institutional best practices, and effective governance, in accordance with the guidelines of the National Assessment and Accreditation Council (NAAC).",
+    "objectives": [
+      "To develop a system for conscious, consistent, and continuous improvement in the academic and administrative performance of the institution.",
+      "To promote quality enhancement through innovative teaching–learning methodologies, research, extension activities, and student support services.",
+      "To facilitate the implementation of quality benchmarks in academic and administrative processes.",
+      "To encourage faculty development, professional excellence, and capacity-building initiatives."
+    ]
+  },
   {
     "id": "book-club",
-    "code": "01",
+    "code": "04",
     "name": "Book Club",
     "shortName": "Book Club",
     "tagline": "Where curious minds turn clinical questions into evidence.",
@@ -18,7 +89,7 @@
   },
   {
     "id": "linguistic-club",
-    "code": "02",
+    "code": "05",
     "name": "Linguistic Club",
     "shortName": "Linguistic Club",
     "tagline": "Care doesn't wait for a hospital bed.",
@@ -36,7 +107,7 @@
   },
   {
     "id": "journal-club",
-    "code": "03",
+    "code": "06",
     "name": "Journal Club",
     "shortName": "Journal Club",
     "tagline": "A steady hand needs an expressive heart.",
@@ -52,7 +123,7 @@
   },
   {
     "id": "student-nurses-association",
-    "code": "04",
+    "code": "07",
     "name": "Student Nurses Association (SNA)",
     "shortName": "SNA",
     "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
@@ -72,7 +143,7 @@
   },
   {
     "id": "cultural-club",
-    "code": "05",
+    "code": "08",
     "name": "Cultural Club",
     "shortName": "CULTURAL CLUB",
     "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
@@ -89,7 +160,7 @@
   },
   {
     "id": "women-empowerment-club",
-    "code": "06",
+    "code": "09",
     "name": "Women Empowerment Club",
     "shortName": "Women Empowerment Club",
     "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
@@ -103,27 +174,10 @@
       "To create a supportive and inclusive environment that encourages peer support, empathy, and mutual respect among students."
     ]
   },
-  {
-    "id": "student-wellness-club",
-    "code": "07",
-    "name": "Student Wellness Club",
-    "shortName": "Student Wellness Club",
-    "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
-    "color": "accent",
-    "icon": "heart-pulse",
-    "aim": "To promote the holistic well-being of students by fostering physical, mental, emotional, social, and spiritual wellness through education, awareness, and healthy lifestyle practices.",
-    "objectives": [
-      "To create awareness among students about the importance of maintaining their own health and promoting the health of others.",
-      "To develop a spirit of voluntary service and humanitarian values among youth.",
-      "To train students in first aid, disaster preparedness, and emergency response. ",
-      "To motivate students to participate in blood donation, organ donation, and other life-saving initiatives.",
-      "To promote leadership qualities, teamwork, discipline, and responsible citizenship.",
-      "To organize health awareness programmes, environmental protection campaigns, and community outreach activities."
-    ]
-  },
+ 
   {
     "id": "Youth Red Cross (YRC) Club",
-    "code": "08",
+    "code": "10",
     "name": "Youth Red Cross (YRC) Club",
     "shortName": "Youth Red Cross (YRC) Club",
     "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
@@ -140,37 +194,22 @@
     ]
   },
   {
-    "id": "Anti-Ragging Committee",
-    "code": "09",
-    "name": "Anti-Ragging Committee",
-    "shortName": "Anti-Ragging Committee",
+    "id": "Internal Complaints Committee",
+    "code": "11",
+    "name": "Internal Complaints Committee",
+    "shortName": "Internal Complaints Committee",
     "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
     "color": "accent",
     "icon": "shield-alert",
-    "aim": "To ensure a safe, respectful, and ragging-free campus by fostering a culture of dignity, mutual respect, inclusivity, and zero tolerance towards ragging in all its forms.",
+    "aim": "The College has constituted an Internal Complaints Committee (ICC) in accordance with the University Grants Commission(Prevention, Prohibition and Redressal of Sexual Harassment of Women Employees and Students .The Committee is established to provide a safe, secure, inclusive, and dignified environment for students, teaching staff, non-teaching staff, and other members of the College community and to prevent,prohibit, and redress complaints relating to sexual harassment.",
     "objectives": [
-      "To create awareness among students, faculty, and staff about the 17 United Nations Sustainable Development Goals (SDGs) and their significance.",
-      "To integrate sustainability principles into academic, research, extension, and outreach activities.",
-      "To encourage environmentally responsible practices, including energy conservation, waste management, water conservation, and biodiversity protection.",
-      "To promote social responsibility through community engagement, health promotion, education, and outreach programmes aligned with the SDGs.",
-      "To organize seminars, workshops, awareness campaigns, and competitions on sustainable development and environmental stewardship.",
-      "To encourage research, innovation, and student projects that contribute to achieving the SDGs."
-    ]
-  },
-  {
-    "id": "Sustainable Development Goals (SDG) Cell",
-    "code": "10",
-    "name": "Sustainable Development Goals (SDG) Cell",
-    "shortName": "Sustainable Development Goals (SDG) Cell",
-    "tagline": "Empowering future nurses through leadership, advocacy, and excellence in care.",
-    "color": "accent",
-    "icon": "globe",
-    "aim": "To promote awareness, participation, and institutional commitment towards the United Nations Sustainable Development Goals (SDGs) by integrating sustainability into education, research, community engagement, and campus practices for the holistic development of society.",
-    "objectives": [
-      "To develop a system for conscious, consistent, and continuous improvement in the academic and administrative performance of the institution.",
-      "To promote quality enhancement through innovative teaching–learning methodologies, research, extension activities, and student support services.",
-      "To facilitate the implementation of quality benchmarks in academic and administrative processes.",
-      "To encourage faculty development, professional excellence, and capacity-building initiatives."
+      "To prevent sexual harassment within the College and its associated facilities.",
+      "To create awareness regarding sexual harassment and gender equality.",
+      "To provide a fair, confidential, and accessible mechanism for receiving and addressing complaints.",
+      "To protect the dignity, safety, and rights of students and employees.",
+      "To promote gender sensitization and a respectful campus environment."
     ]
   }
+
+  
 ]

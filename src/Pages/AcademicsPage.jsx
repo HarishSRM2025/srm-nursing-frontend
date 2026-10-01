@@ -19,7 +19,7 @@ export default function AcademicsPage() {
       <DGNMSection />
       <MScNursingSection />
       <CNESection />
-      <AwardsSection />
+      {/* <AwardsSection /> */}
       {/* <AcademicCalendarSection /> */}
       {/* <GallerySection /> */}
       <CTASection />
