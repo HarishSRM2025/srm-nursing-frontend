@@ -163,7 +163,10 @@ export default function Navbar() {
           }],
         },
         { icon: <FaCalendarAlt />, label: "Academic Calendar", href: academicCalendarPdf, external: true },
-        { icon: <FaTrophy />, label: "Awards and Achievements", href: "" },
+        { icon: <FaTrophy />, label: "Awards and Achievements", children: [
+          { label: "Student Achievements", href: "/student-achievements" },
+          { label: "Faculty Achievements", href: "/faculty-achievements" },
+        ] },
         { icon: <FaHandsHelping />, label: "Committees and Clubs", href: "/clubs" },
       ],
     },

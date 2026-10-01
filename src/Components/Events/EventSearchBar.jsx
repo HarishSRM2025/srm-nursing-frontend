@@ -1,7 +1,7 @@
 import { FiSearch, FiGrid, FiList } from 'react-icons/fi';
 
 
-const EventSearchBar = ({ searchQuery, setSearchQuery, viewMode, setViewMode, resultCount, onMobileFilter }) => {
+const EventSearchBar = ({ searchQuery, setSearchQuery, viewMode, setViewMode, resultCount, onMobileFilter, placeholder = 'Search events, workshops, seminars...', resultLabel = 'events' }) => {
   return (
     <div className="event-searchbar">
       <div className="event-searchbar__inner">
@@ -17,7 +17,8 @@ const EventSearchBar = ({ searchQuery, setSearchQuery, viewMode, setViewMode, re
           <input
             type="text"
             className="event-searchbar__input"
-            placeholder="Search events, workshops, seminars..."
+            placeholder={placeholder}
+            aria-label={placeholder}
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
           />
@@ -25,7 +26,7 @@ const EventSearchBar = ({ searchQuery, setSearchQuery, viewMode, setViewMode, re
 
         {/* Result count */}
         <span className="event-searchbar__count">
-          <strong>{resultCount}</strong> events found
+          <strong>{resultCount}</strong> {resultLabel} found
         </span>
 
         {/* View toggle */}

@@ -1,3 +1,4 @@
+import AchievementsPage from './Pages/AchievementsPage'
 import './Styles/style.css'
 import './Styles/header.css'
 import Home from './Pages/Home'
@@ -29,6 +30,8 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/student-achievements" element={<AchievementsPage key="student" type="student" />} />
+        <Route path="/faculty-achievements" element={<AchievementsPage key="faculty" type="faculty" />} />
         <Route path="/events" element={<EventsPage/>} />
         <Route path="/cne" element={<CNEPage/>} />
         <Route path="/events/:id" element={<EventDetailPage/>} />
