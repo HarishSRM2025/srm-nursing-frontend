@@ -60,7 +60,7 @@ const CLUB_IMAGES = {
   'Anti-Ragging Committee': AntiRaggingImg,
   'Sustainable Development Goals (SDG) Cell': SDGImg,
   'Internal Quality Assurance Cell (IQAC)': IQAC,
-  'Internal Complaints Committee': ICC,
+  'Internal Complaints Committee (ICC)': ICC,
 };
 
 function ClubSection({ club, index }) {
