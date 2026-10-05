@@ -25,7 +25,7 @@ const displayCategories = [
   { id: 'all', label: allLabel, count: filters.total },
   ...filters.categories.map(category => ({ id: category.name, label: category.name, count: category.count }))
 ];
-const displayYears = filters.years;
+const displayYears = [...filters.years].sort((a, b) => Number(b) - Number(a));
   return (
     <aside className="event-sidebar">
 
