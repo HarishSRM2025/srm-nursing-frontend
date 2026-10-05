@@ -37,7 +37,7 @@ const EventsPage = ({ scope = 'events' }) => {
       try {
         const res = await axios.get(API_URL + '/api/events/get-all-events', {
           signal: controller.signal,
-          params: { scope, page: currentPage, limit: ITEMS_PER_PAGE, search: searchQuery,
+          params: { scope, sort: 'date-desc', page: currentPage, limit: ITEMS_PER_PAGE, search: searchQuery,
             category: activeCategory === 'all' ? '' : activeCategory, year: activeYear,
             month: activeMonth, tags: activeTags.join(','), activeOnly: 'true', includeFilters: 'true' }
         });
