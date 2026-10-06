@@ -82,7 +82,7 @@ export default function AchievementsPage({ type = 'student' }) {
               {data.achievements.map(item => <article className="achievement-card" key={item._id}>
                 <div className="achievement-card__meta"><span><FiAward /> {item.category}</span><span>{item.year}</span></div>
                 <h3>{item.award_or_title}</h3>
-                <p className="achievement-card__recipient">{item.student_or_batch}</p>
+                <p className="achievement-card__recipient">{type === 'faculty' ? item.faculty_name : item.student_or_batch}</p>
                 {item.description && <p className="achievement-card__description">{item.description}</p>}
                 {item.institution && <p className="achievement-card__institution">{item.institution}</p>}
               </article>)}

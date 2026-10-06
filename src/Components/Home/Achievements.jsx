@@ -286,7 +286,7 @@ export function Achievements() {
                             textTransform: "uppercase",
                             letterSpacing: 0.5,
                           }}>
-                            {a.student_or_batch}
+                            {type === 'faculty' ? a.faculty_name : a.student_or_batch}
                           </div>
 
                           {/* Award Title */}
