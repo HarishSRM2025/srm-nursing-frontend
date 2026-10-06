@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { FiAward, FiCalendar, FiRefreshCw } from 'react-icons/fi';
 import Breadcrum from '../Components/Common/Breadcrum';
 import EventSearchBar from '../Components/Events/EventSearchBar';
@@ -47,6 +48,10 @@ export default function AchievementsPage({ type = 'student' }) {
   return (
     <div className="achievement-page">
       <Breadcrum title={title} subtitle={`Home / ${title}`} />
+      <nav aria-label="Achievement type" style={{ display: 'flex', justifyContent: 'center', gap: 24, padding: 20 }}>
+        <Link to="/student-achievements" aria-current={type === 'student' ? 'page' : undefined}>Student Achievements</Link>
+        <Link to="/faculty-achievements" aria-current={type === 'faculty' ? 'page' : undefined}>Faculty Achievements</Link>
+      </nav>
       <EventSearchBar searchQuery={search} setSearchQuery={change(setSearch)} viewMode={view} setViewMode={setView}
         resultCount={data.pagination.total} resultLabel="achievements" placeholder="Search names, awards, achievements..."
         onMobileFilter={() => setMobileOpen(value => !value)} />

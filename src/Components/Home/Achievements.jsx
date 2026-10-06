@@ -21,28 +21,32 @@ const YEAR_COLORS = [
 
 export function Achievements() {
   const sectionRef = useRef(null);
+  const [type, setType] = useState('student');
+  const [error, setError] = useState('');
+  const [retry, setRetry] = useState(0);
   const [achievements, setAchievements] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
+    const controller = new AbortController();
     const fetchData = async () => {
+      setLoading(true);
+      setError('');
       try {
-        const res = await fetch(`${API_URL}/api/achievement?status=active`);
-        if (res.ok) {
-          const json = await res.json();
-          if (json.achievements && json.achievements.length > 0) {
-            setAchievements(json.achievements);
-          }
-        }
+        const res = await fetch(`${API_URL}/api/${type}-achievements?status=active`, { signal: controller.signal });
+        if (!res.ok) throw new Error('Unable to load achievements. Please try again.');
+        const json = await res.json();
+        if (!controller.signal.aborted) setAchievements(json.achievements || []);
       } catch (err) {
-        console.warn("Using fallback achievements data:", err);
+        if (!controller.signal.aborted) setError(err.message);
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       }
     };
     fetchData();
-  }, []);
+    return () => controller.abort();
+  }, [type, retry]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,7 +55,7 @@ export function Achievements() {
     );
     sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, [achievements]);
+  }, [achievements, loading, error]);
 
   const categories = ["All", ...new Set(achievements.map(a => a.category))];
   const filtered = activeCategory === "All" ? achievements : achievements.filter(a => a.category === activeCategory);
@@ -75,12 +79,21 @@ export function Achievements() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header reveal">
-          <div className="section-eyebrow">Student Awards & Achievements</div>
-          <h2 className="section-title">Our Students Excel Everywhere</h2>
+          <div className="section-eyebrow">{type === 'faculty' ? 'Faculty' : 'Student'} Awards & Achievements</div>
+          <h2 className="section-title">Our {type === 'faculty' ? 'Faculty' : 'Students'} Excel Everywhere</h2>
           <p className="section-desc">
-            Recognizing the dedication and brilliance of SRM Trichy College of Nursing students — from academic toppers to sports champions.
+            Celebrating the awards and achievements of SRM Trichy College of Nursing {type === 'faculty' ? 'faculty members' : 'students'}.
           </p>
         </div>
+
+        <nav aria-label="Achievement type" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 24 }}>
+          {['student', 'faculty'].map(value => <button key={value} type="button"
+            aria-pressed={type === value} disabled={type === value}
+            onClick={() => { setType(value); setAchievements([]); setActiveCategory('All'); setLoading(true); }}>
+            {value === 'faculty' ? 'Faculty' : 'Student'} Achievements
+          </button>)}
+          <a href={`/${type}-achievements`}>View All {type === 'faculty' ? 'Faculty' : 'Student'} Achievements</a>
+        </nav>
 
         {/* Stats Bar */}
         <div className="stats-bar reveal">
@@ -163,6 +176,10 @@ export function Achievements() {
           <div style={{ textAlign: "center", padding: "40px 0", color: "var(--text-muted)" }}>
             Loading achievements...
           </div>
+        ) : error ? (
+          <div role="alert"><p>{error}</p><button onClick={() => setRetry(value => value + 1)}>Retry</button></div>
+        ) : filtered.length === 0 ? (
+          <p role="status" style={{ textAlign: 'center' }}>No {type} achievements published yet.</p>
         ) : (
           /* Year-Grouped Timeline */
           <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
