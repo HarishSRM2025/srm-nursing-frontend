@@ -19,6 +19,7 @@ export default function ResearchCard({ pub }) {
         </div>
 
         <h3 className="research-card__title">{title}</h3>
+        {pub.researcher_name && <p className="research-card__authors">{pub.researcher_name}</p>}
         <div className="research-card__divider" />
         <p className="research-card__description">{pub.description}</p>
       </div>

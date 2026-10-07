@@ -53,7 +53,7 @@ export default function ResearchPage() {
       list = list.filter(p => {
         const title = (p.title || p.publication_details || '').toLowerCase();
         const desc = (p.description || '').toLowerCase();
-        return title.includes(q) || desc.includes(q);
+        return (p.researcher_name || '').toLowerCase().includes(q) || title.includes(q) || desc.includes(q);
       });
     }
     return list;
