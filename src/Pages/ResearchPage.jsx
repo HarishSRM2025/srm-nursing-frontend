@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import "../Styles/research.css";
-import { publications as defaultPublications, getUniqueYears } from '../Data/publications';
+import { publications as defaultPublications, getUniqueYears, getResearchersWithCount } from '../Data/publications';
 import ResearchTopBar from '../Components/Research/ResearchTopBar';
 import { ResearchSidebar, ResearchFilterModal } from '../Components/Research/ResearchSidebar';
 import ResearchGrid from '../Components/Research/ResearchGrid';
@@ -14,6 +14,7 @@ export default function ResearchPage() {
   const [data, setData] = useState(defaultPublications);
   const [search, setSearch] = useState('');
   const [yearFilter, setYearFilter] = useState('all');
+  const [researcherFilter, setResearcherFilter] = useState([]);
   const [page, setPage] = useState(1);
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -43,30 +44,37 @@ export default function ResearchPage() {
 
   const years = useMemo(() => getUniqueYears(data), [data]);
 
+  const researchers = useMemo(() => getResearchersWithCount(data), [data]);
+
   const filtered = useMemo(() => {
     let list = data;
     if (yearFilter !== 'all') {
       list = list.filter(p => Number(p.year) === Number(yearFilter));
     }
+    if (researcherFilter.length) {
+      list = list.filter(p => researcherFilter.includes((p.researcher_name || '').trim()));
+    }
     if (search.trim()) {
-      const q = search.toLowerCase();
+      const q = search.trim().toLowerCase();
       list = list.filter(p => {
-        const title = (p.title || p.publication_details || '').toLowerCase();
+        const title = (p.title || '').toLowerCase();
         const desc = (p.description || '').toLowerCase();
         return (p.researcher_name || '').toLowerCase().includes(q) || title.includes(q) || desc.includes(q);
       });
     }
     return list;
-  }, [data, search, yearFilter]);
+  }, [data, search, yearFilter, researcherFilter]);
 
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE) || 1;
-  const paginated = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
+  const currentPage = Math.min(page, totalPages);
+  const paginated = filtered.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
   const handleSearch = v => { setSearch(v); setPage(1); };
   const handleYearFilter = v => { setYearFilter(v); setPage(1); };
-  const clearAll = () => { setYearFilter('all'); setPage(1); };
+  const handleResearcherFilter = v => { setResearcherFilter(v); setPage(1); };
+  const clearAll = () => { setYearFilter('all'); setResearcherFilter([]); setPage(1); };
 
-  const activeFilterCount = (yearFilter !== 'all' ? 1 : 0);
+  const activeFilterCount = (yearFilter !== 'all' ? 1 : 0) + researcherFilter.length;
 
   return (
     <div className="research-page">
@@ -85,6 +93,9 @@ export default function ResearchPage() {
         {/* Right: Desktop sidebar */}
         <ResearchSidebar
           years={years}
+          researchers={researchers}
+          researcherFilter={researcherFilter}
+          onResearcherFilter={handleResearcherFilter}
           yearFilter={yearFilter}
           onYearFilter={handleYearFilter}
           filtered={filtered.length}
@@ -101,7 +112,7 @@ export default function ResearchPage() {
             <>
               <ResearchGrid publications={paginated} />
               <ResearchPagination
-                currentPage={page}
+                currentPage={currentPage}
                 totalPages={totalPages}
                 onPageChange={setPage}
                 totalItems={filtered.length}
@@ -118,6 +129,9 @@ export default function ResearchPage() {
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         years={years}
+          researchers={researchers}
+          researcherFilter={researcherFilter}
+          onResearcherFilter={handleResearcherFilter}
         yearFilter={yearFilter}
         onYearFilter={handleYearFilter}
         filtered={filtered.length}

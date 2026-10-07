@@ -1,11 +1,12 @@
 import {
   RiEqualizerLine,
   RiCalendarLine,
+  RiUserLine,
   RiCloseLine,
 } from 'react-icons/ri';
 
 /* ─── Shared filter content used in both sidebar and modal ─── */
-function FilterContent({ years, yearFilter, onYearFilter }) {
+function FilterContent({ years, yearFilter, onYearFilter, researchers, researcherFilter, onResearcherFilter }) {
 
   return (
     <>
@@ -24,7 +25,7 @@ function FilterContent({ years, yearFilter, onYearFilter }) {
           {years.map(y => (
             <button
               key={y}
-              className={`research-year-pill${yearFilter === y ? ' active' : ''}`}
+              className={`research-year-pill${String(yearFilter) === String(y) ? ' active' : ''}`}
               onClick={() => onYearFilter(y)}
             >
               {y}
@@ -33,13 +34,30 @@ function FilterContent({ years, yearFilter, onYearFilter }) {
         </div>
       </div>
 
+      <div className="research-sidebar__divider" />
+      <div className="research-filter-group">
+        <div className="research-filter-group__label"><RiUserLine /> Filter by Researcher</div>
+        <div className="research-author-list">
+          {researchers.map(({ name, count }) => (
+            <label key={name} className="research-author-item">
+              <input type="checkbox" checked={researcherFilter.includes(name)}
+                onChange={() => onResearcherFilter(researcherFilter.includes(name)
+                  ? researcherFilter.filter(value => value !== name)
+                  : [...researcherFilter, name])} />
+              <span className="research-author-item__name">{name}</span>
+              <span className="research-author-item__count">{count}</span>
+            </label>
+          ))}
+          {!researchers.length && <p>No researchers listed.</p>}
+        </div>
+      </div>
     </>
   );
 }
 
 /* ─── Desktop Sidebar ─── */
-export function ResearchSidebar({ years, yearFilter, onYearFilter, filtered, total, onClear }) {
-  const activeCount = (yearFilter !== 'all' ? 1 : 0);
+export function ResearchSidebar({ years, yearFilter, onYearFilter, researchers, researcherFilter, onResearcherFilter, filtered, total, onClear }) {
+  const activeCount = (yearFilter !== 'all' ? 1 : 0) + researcherFilter.length;
 
   return (
     <aside className="research-sidebar">
@@ -74,6 +92,9 @@ export function ResearchSidebar({ years, yearFilter, onYearFilter, filtered, tot
 
           <FilterContent
             years={years}
+            researchers={researchers}
+            researcherFilter={researcherFilter}
+            onResearcherFilter={onResearcherFilter}
             yearFilter={yearFilter}
             onYearFilter={onYearFilter}
           />
@@ -84,8 +105,8 @@ export function ResearchSidebar({ years, yearFilter, onYearFilter, filtered, tot
 }
 
 /* ─── Mobile Filter Modal ─── */
-export function ResearchFilterModal({ open, onClose, years, yearFilter, onYearFilter, filtered, onClear }) {
-  const activeCount = (yearFilter !== 'all' ? 1 : 0);
+export function ResearchFilterModal({ open, onClose, years, yearFilter, onYearFilter, researchers, researcherFilter, onResearcherFilter, filtered, onClear }) {
+  const activeCount = (yearFilter !== 'all' ? 1 : 0) + researcherFilter.length;
 
   return (
     <div
@@ -119,6 +140,9 @@ export function ResearchFilterModal({ open, onClose, years, yearFilter, onYearFi
         <div className="research-filter-modal__body">
           <FilterContent
             years={years}
+            researchers={researchers}
+            researcherFilter={researcherFilter}
+            onResearcherFilter={onResearcherFilter}
             yearFilter={yearFilter}
             onYearFilter={onYearFilter}
           />

@@ -17,7 +17,7 @@ export default function ResearchGrid({ publications }) {
   return (
     <div className="research-grid">
       {publications.map(pub => (
-        <ResearchCard key={pub.sno} pub={pub} />
+        <ResearchCard key={pub._id || pub.sno} pub={pub} />
       ))}
     </div>
   );
