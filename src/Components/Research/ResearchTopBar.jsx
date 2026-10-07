@@ -11,7 +11,7 @@ export default function ResearchTopBar({ search, onSearch, onOpenFilter, activeF
           <input
             className="research-topbar__search"
             type="text"
-            placeholder="Search by title, author..."
+            placeholder="Search by title or keywords..."
             value={search}
             onChange={e => onSearch(e.target.value)}
           />
