@@ -1,6 +1,9 @@
-import { RiCalendarLine } from 'react-icons/ri';
+import { RiCalendarLine, RiUserLine } from 'react-icons/ri';
+
+import { normalizeResearch } from '../../Data/normalizeResearch';
 
 export default function ResearchCard({ pub }) {
+  pub = normalizeResearch(pub);
   const title = pub.title;
 
   return (
@@ -12,17 +15,17 @@ export default function ResearchCard({ pub }) {
             <div className="research-card__badges">
               {pub.sno > 0 && <span className="research-card__sno">#{pub.sno}</span>}
               <span className="research-card__year">
-                <RiCalendarLine /> {pub.year}
+                <RiCalendarLine /> {pub.year || "Year not provided"}
               </span>
             </div>
           </div>
         </div>
 
         <h3 className="research-card__title">{title}</h3>
-        {pub.researcher_name && <p className="research-card__authors">{pub.researcher_name}</p>}
-        {pub.institution && <p className="research-card__description">{pub.institution}</p>}
+        <p className="research-card__authors"><RiUserLine aria-hidden="true" /><span>{pub.researcher_name || "Researcher name not provided"}</span></p>
+        {pub.institution && <p className="research-card__institution">{pub.institution}</p>}
         <div className="research-card__divider" />
-        <p className="research-card__description">{pub.description}</p>
+        {pub.description && <p className="research-card__description">{pub.description}</p>}
       </div>
 
     </div>

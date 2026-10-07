@@ -141,9 +141,21 @@ input, select, textarea { font-family: var(--research-font-body); }
 }
 
 .research-card__authors span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+.research-card__authors svg {
+  flex-shrink: 0;
+}
+
+.research-card__institution {
+  font-size: 0.75rem;
+  color: var(--research-gray);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .research-card__title {
@@ -163,10 +175,8 @@ input, select, textarea { font-family: var(--research-font-body); }
   font-size: 0.8rem;
   color: var(--research-text-light);
   line-height: 1.65;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 
 .research-card__footer {

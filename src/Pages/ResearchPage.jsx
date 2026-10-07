@@ -7,11 +7,13 @@ import ResearchGrid from '../Components/Research/ResearchGrid';
 import ResearchPagination from '../Components/Research/ResearchPagination';
 import Breadcrum from '../Components/Common/Breadcrum';
 
+import { normalizeResearch } from '../Data/normalizeResearch';
+
 const API_URL = import.meta.env.VITE_BACKEND_API_URL || import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const ITEMS_PER_PAGE = 9;
 
 export default function ResearchPage() {
-  const [data, setData] = useState(defaultPublications);
+  const [data, setData] = useState(() => defaultPublications.map(normalizeResearch));
   const [search, setSearch] = useState('');
   const [yearFilter, setYearFilter] = useState('all');
   const [researcherFilter, setResearcherFilter] = useState([]);
@@ -28,9 +30,9 @@ export default function ResearchPage() {
         if (res.ok) {
           const json = await res.json();
           if (json && Array.isArray(json.publications)) {
-            setData(json.publications);
+            setData(json.publications.map(normalizeResearch));
           } else if (Array.isArray(json)) {
-            setData(json);
+            setData(json.map(normalizeResearch));
           }
         }
       } catch (err) {
