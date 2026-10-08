@@ -4,11 +4,11 @@ const tabs = [
   { icon: <FaShieldAlt />,         label: 'Disciplinary Committee', href: '#disciplinary-committee' },
   { icon: <FaUserGraduate />,       label: 'Students',              href: '#students' },
   { icon: <FaTshirt />,             label: 'Dress Code',            href: '#dress' },
+  { icon: <FaHome />,               label: 'Hostel',                href: '#hostel' },
   { icon: <FaBan />,                label: 'Anti-Ragging',          href: '#ragging' },
   { icon: <FaRegBuilding />,        label: 'Principal',             href: '#principal' },
   { icon: <FaChalkboardTeacher />,  label: 'Faculty',               href: '#faculty' },
   { icon: <FaTools />,              label: 'Support Staff',         href: '#support' },
-  { icon: <FaHome />,               label: 'Hostel',                href: '#hostel' },
 ];
 
 export default function QuickNav() {

@@ -20,11 +20,11 @@ export default function CodeOfConduct_Responsive() {
       <DisciplinaryCommittee />
       <Students />
       <DressCode />
+      <Hostel />
       <AntiRagging />
       <Principal/>
       <Faculty />
       <SupportStaff />
-      <Hostel />
     </>
   );
 }
