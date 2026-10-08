@@ -30,8 +30,8 @@ import AntiRaggingImg from '../assets/images/Clubs/anti-ragging.png';
 import SDGImg from '../assets/images/Clubs/sdg.png';
 import Breadcrum from '../Components/Common/Breadcrum';
 import AssoYRC from '../Components/Association/AssoYRC';
-import IQAC from '../Components/Clubs/iqac';
-import ICC from '../Components/Clubs/internal-complaints-committee';
+import IQAC from '../assets/images/Clubs/iqac.png';
+import ICC from '../assets/images/Clubs/internal-complaints-committee.png';
 
 // Maps the "icon" string in clubs.json to an actual icon component.
 const ICONS = {

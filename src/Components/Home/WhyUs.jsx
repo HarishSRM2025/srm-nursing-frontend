@@ -6,7 +6,7 @@ import {
 
 
 const whyCards = [
-  { icon: <FaHospital />, title: "500-Bed Teaching Hospital", desc: "Direct clinical training in our own hospital gives students unparalleled hands-on patient care experience from day one." },
+  { icon: <FaHospital />, title: "1575+ Bed Teaching Hospital", desc: "Direct clinical training in our own hospital gives students unparalleled hands-on patient care experience from day one." },
   { icon: <FaGlobeAsia />, title: "Global Placement Network", desc: "Partnerships with hospitals in UK, USA, UAE, Canada, and Australia open international career doors for our graduates." },
   { icon: <FaVrCardboard />, title: "Advanced Simulation Lab", desc: "State-of-the-art patient simulation mannequins and virtual reality labs for realistic clinical skill training." },
   // { icon: <FaChalkboardTeacher />, title: "Expert Faculty", desc: "120+ Ph.D qualified faculty with clinical expertise, research publications, and international academic exposure." },
