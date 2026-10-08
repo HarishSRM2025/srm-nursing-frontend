@@ -6,7 +6,7 @@ import {
 } from 'react-icons/fi';
 import Img1 from "../../assets/images/Facilities/1.jpg"
 import Img2 from "../../assets/images/Facilities/2.jpg"
-import Img3 from "../../assets/images/Facilities/3.JPG"
+import Img3 from "../../assets/images/Facilities/3.jpg"
 import Img4 from "../../assets/images/Facilities/4.jpg"
 import Img5 from "../../assets/images/Facilities/5.jpg"
 import Img6 from "../../assets/images/Facilities/6.png"
