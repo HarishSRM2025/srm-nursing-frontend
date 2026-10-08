@@ -42,7 +42,20 @@ export default function About() {
             <h2 className="about-title">
               Shaping <span>Compassionate</span> and Competent Nursing Professionals
             </h2>
-            <p className="about-desc">SRM Trichy College of Nursing is a member of SRMIST Trust. College of Nursing was started in the year 2018.  It is located at Trichy-Chennai highways, SRM Nagar, near Samayapuram  in a spacious and green ambience with exclusive building to learn the road spectrum of nursing education, practice and research. Here Students have an opportunity to participate in curricular, co-curricular and extracurricular activities. This motivate the students to develop themselves to be globally competitive nursing professionals. 
+            <p className="about-desc">SRM Trichy College of Nursing is a constituent institution of the SRM Group of
+              Institutions. The institution functions under the SRM Institute of Science and Technology
+              Trust. The Trust was founded by Dr. T. R. Paarivendhar, an academician and educationist,
+              with the aim of promoting quality education. <br /><br />
+              College of Nursing was started in the year 2018 in the month of October. It is located at
+              SRM Nagar, Near Samayapuram in a spacious and green ambience with exclusive building to
+              learn the road spectrum of Nursing Education, practice &amp; Research. Here students are
+              encouraged to take part in curricular, Co-Curricular &amp; extra-Curricular activities. These
+              motivate the students to develop themselves to be globally competitive Nursing professionals. <br /><br />
+              We train competent nurses with humanity &amp; global standards in nursing profession.
+              The teaching methods adopted are lecture, symposium, case study discussions,
+              demonstrations, panel discussion, debates, seminars etc., classes are made lively by adopting
+              multimedia projectors. We adopt mentoring system to mould the students into highly
+              confident &amp; motivated persons, endow with the unique qualities of leadership.
             </p>
            
             <br />
