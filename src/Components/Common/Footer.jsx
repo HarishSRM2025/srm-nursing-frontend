@@ -65,7 +65,7 @@ export function Footer() {
           <div className="footer-col">
             <h4>Quick Links</h4>
             <ul>
-              {[["#about","About College"],["#programs","Programs Offered"],["#why","Why Choose Us"],["#leadership","Leadership"],["#achievements","Achievements"],["#contact","Contact Us"]].map(([href, label]) => (
+              {[["#about","About College"],["#programs","Programs Offered"],["#why","Why Choose Us"],["#leadership","Leadership"],["#contact","Contact Us"]].map(([href, label]) => (
                 <li key={label}>
                   <a href={href} onClick={(e) => { e.preventDefault(); handleAnchor(href); }}>
                     <FaChevronRight /> {label}

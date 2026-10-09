@@ -1,6 +1,5 @@
 import About from "../Components/Home/About";
 import { Accreditations } from "../Components/Home/Accreditations";
-import { Achievements } from "../Components/Home/Achievements";
 import { Contact } from "../Components/Home/Contact";
 import Hero from "../Components/Home/Hero";
 import Leadership from "../Components/Home/Leadership";
@@ -19,7 +18,6 @@ const Home = () => {
         <Programs/>
         <WhyUs/>
         <Accreditations/>
-        <Achievements/>
         {/* <Testimonials/> */}
         <Contact/>
         </>

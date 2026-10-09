@@ -378,6 +378,24 @@
   color: var(--accent);
 }
 
+.about-read-more {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin: 0 0 28px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.about-read-more:hover { text-decoration: underline; }
+.about-read-more:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+
 .about-desc {
   color: var(--text-light);
   line-height: 1.85;
@@ -449,7 +467,7 @@
 /* ── Grid ── */
 .vm-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 28px;
   position: relative;
   z-index: 1;
@@ -485,6 +503,79 @@
 
 .vm-card.mission:hover {
   box-shadow: 0 22px 56px rgba(15,140,166,0.30);
+}
+
+/* Vision above the five mission pillars */
+.vm-grid > .vision .vm-card-content {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 40px;
+}
+
+.vm-grid > .vision .vm-card-icon-wrap { justify-content: center; }
+.vm-grid > .vision .vm-card-accent-line { margin: 28px auto 0; }
+
+.vm-pillars-heading { text-align: center; margin: 20px 0 28px; }
+.vm-pillars-heading h3 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--text);
+}
+
+.vm-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vm-pillar-card {
+  padding: 26px 22px;
+  border: 1px solid rgba(75,46,131,0.12);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(75,46,131,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(75,46,131,0.12);
+}
+
+.vm-pillar-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+.vm-pillar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(15,140,166,0.08);
+  color: var(--accent);
+  font-size: 21px;
+}
+.vm-pillar-number { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: #aba0bf; }
+.vm-pillar-card h4 { font-family: var(--font-display); font-size: 18px; line-height: 1.35; color: var(--primary); margin-bottom: 12px; }
+.vm-pillar-card p { font-size: 14px; line-height: 1.75; color: var(--text-light); }
+
+@media (max-width: 1100px) {
+  .vm-pillars-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .vm-pillars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .vm-grid > .vision .vm-card-content { padding: 32px 22px; }
+  .vm-pillars-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vm-pillar-card { transition: none; }
+  .vm-pillar-card:hover { transform: none; }
 }
 
 /* Subtle glow orb behind each card */

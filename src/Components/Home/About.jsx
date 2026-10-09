@@ -1,12 +1,10 @@
-import { useEffect, useRef } from "react";
-import {
-  FaCheckCircle, FaHospitalUser, FaBuilding, FaUniversity,
-  FaStar, FaGlobeAsia, FaMicroscope, FaArrowRight
-} from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import Img from '../../assets/images/Home/About/1.JPG'
 
 export default function About() {
   const sectionRef = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,10 +28,10 @@ export default function About() {
             <div className="about-img-main">
               <img src={Img} alt=""  />
 
-              <div className="about-badge">
+              {/* <div className="about-badge">
                 <div className="about-badge-num">8</div>
                 <div className="about-badge-text">Years of<br />Excellence</div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -45,7 +43,10 @@ export default function About() {
             <p className="about-desc">SRM Trichy College of Nursing is a constituent institution of the SRM Group of
               Institutions. The institution functions under the SRM Institute of Science and Technology
               Trust. The Trust was founded by Dr. T. R. Paarivendhar, an academician and educationist,
-              with the aim of promoting quality education. <br /><br />
+              with the aim of promoting quality education.
+            </p>
+            <div id="about-more-content" hidden={!isExpanded}>
+            <p className="about-desc">
               College of Nursing was started in the year 2018 in the month of October. It is located at
               SRM Nagar, Near Samayapuram in a spacious and green ambience with exclusive building to
               learn the road spectrum of Nursing Education, practice &amp; Research. Here students are
@@ -57,8 +58,17 @@ export default function About() {
               multimedia projectors. We adopt mentoring system to mould the students into highly
               confident &amp; motivated persons, endow with the unique qualities of leadership.
             </p>
-           
-            <br />
+            </div>
+            <button
+              type="button"
+              className="about-read-more"
+              aria-expanded={isExpanded}
+              aria-controls="about-more-content"
+              onClick={() => setIsExpanded((expanded) => !expanded)}
+            >
+              {isExpanded ? "Read less" : "Read more"}
+              <span aria-hidden="true">{isExpanded ? "−" : "+"}</span>
+            </button>
             <a href="#contact" className="btn-primary" onClick={(e) => { e.preventDefault(); handleAnchor("#contact"); }}>
               <FaArrowRight /> Get Admission Details
             </a>

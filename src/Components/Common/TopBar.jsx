@@ -47,10 +47,10 @@ export default function TopBar() {
         <div className="topbar-right">
           <div className="topbar-social">
             <a href="https://www.facebook.com/SRM-Trichy-College-of-Nursing-114885406585842/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://www.instagram.com/srmtrichynursing/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://www.youtube.com/channel/UC8X5X5X5X5X5X5X5X5X5X5" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
-            <a href="https://www.linkedin.com/school/srm-trichy-college-of-nursing/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-            <a href="https://twitter.com/srmtrichynursing" target="_blank" rel="noopener noreferrer"><FaTwitter/></a>
+            <a href="https://www.instagram.com/ncsrmtrichy/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://www.youtube.com/channel/UCHh3kHjTC23SBPuq48lWwTA/?guided_help_flow=5" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+            <a href="https://www.linkedin.com/company/srm-trichy-college-of-nursing/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+            <a href="https://twitter.com/ncsrmtrichy" target="_blank" rel="noopener noreferrer"><FaTwitter/></a>
           </div>
         </div>
       </div>

@@ -95,7 +95,7 @@ const RegistrationSidebar = ({ event }) => {
 
 
         {/* Share buttons */}
-        <div style={{ marginTop: 24, borderTop: '1px solid var(--light-gray)', paddingTop: 16 }}>
+        {/* <div style={{ marginTop: 24, borderTop: '1px solid var(--light-gray)', paddingTop: 16 }}>
           <div className="event-detail-share">
             <span className="event-detail-share-label">Share:</span>
             <button className="event-detail-share-btn" title="Share on Facebook" onClick={() => alert("Shared on Facebook!")}><FiFacebook /></button>
@@ -108,7 +108,7 @@ const RegistrationSidebar = ({ event }) => {
               Copied link to clipboard!
             </div>
           )}
-        </div>
+        </div> */}
 
       </div>
     </aside>

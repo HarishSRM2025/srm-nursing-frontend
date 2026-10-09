@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import {
   FaEye,
   FaBullseye,
-  FaHeart,
   FaFlask,
+  FaGraduationCap,
   FaHandsHelping,
   FaGlobeAsia,
 } from "react-icons/fa";
@@ -17,6 +17,13 @@ const missionPoints = [
 ];
 
 
+const pillars = [
+  { title: "Quality Education", icon: FaGlobeAsia },
+  { title: "Lifelong Learning", icon: FaGraduationCap },
+  { title: "Innovative Research", icon: FaFlask },
+  { title: "Compassionate Care", icon: FaHandsHelping },
+  { title: "Nursing Leadership", icon: FaBullseye },
+];
 
 export default function VisionMission() {
   const sectionRef = useRef(null);
@@ -51,16 +58,16 @@ export default function VisionMission() {
         {/* ── Vision & Mission Cards ── */}
         <div className="vm-grid reveal">
           {/* Vision Card */}
-          <div className="vm-card vision">
-            <div className="vm-card-glow"></div>
+          <div className="vm-card vision" aria-labelledby="our-vision-title">
+            <div className="vm-card-glow" aria-hidden="true"></div>
             <div className="vm-card-content">
               <div className="vm-card-icon-wrap">
                 <div className="vm-card-icon">
-                  <FaEye />
+                  <FaEye aria-hidden="true" />
                 </div>
                 <span className="vm-card-label">Our Vision</span>
               </div>
-              <h3>Shaping the Future of Healthcare</h3>
+              <h3 id="our-vision-title">Shaping the Future of Healthcare</h3>
               <p>
                 To prepare the students of our Nursing college to become
                 Empathetic, Dedicated and Compassionate health care providers and
@@ -71,28 +78,25 @@ export default function VisionMission() {
             </div>
           </div>
 
-          {/* Mission Card */}
-          <div className="vm-card mission">
-            <div className="vm-card-glow"></div>
-            <div className="vm-card-content">
-              <div className="vm-card-icon-wrap">
-                <div className="vm-card-icon">
-                  <FaBullseye />
-                </div>
-                <span className="vm-card-label">Our Mission</span>
-              </div>
-              <h3>Five Pillars of Purpose</h3>
-              <ul className="vm-mission-list">
-                {missionPoints.map((point, i) => (
-                  <li key={i} className="vm-mission-item">
-                    <span className="vm-mission-num">
+          <div className="vm-pillars" aria-labelledby="vm-pillars-title">
+            <div className="vm-pillars-heading">
+              <div className="section-eyebrow">Our Mission</div>
+              <h3 id="vm-pillars-title">Five Pillars of Purpose</h3>
+            </div>
+            <ol className="vm-pillars-grid">
+              {pillars.map(({ title, icon: Icon }, i) => (
+                <li key={title} className="vm-pillar-card">
+                  <div className="vm-pillar-top">
+                    <span className="vm-pillar-icon"><Icon aria-hidden="true" /></span>
+                    <span className="vm-pillar-number" aria-hidden="true">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="vm-mission-text">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  </div>
+                  <h4>{title}</h4>
+                  <p>{missionPoints[i]}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
 
