@@ -90,7 +90,7 @@ section[id] { scroll-margin-top: 140px; }
   margin-bottom: 14px;
 }
 .section-chip.teal  { background: rgba(15,140,166,0.1);  color: var(--accent);      border-color: rgba(15,140,166,0.25); }
-.section-chip.red   { background: rgba(192,57,43,0.1);   color: #c0392b;             border-color: rgba(192,57,43,0.2); }
+.section-chip.red   { background: rgba(255,255,255,0.18);   color: white;             border-color: rgba(192,57,43,0.2); }
 .section-chip.white { background: rgba(255,255,255,0.18); color: white;               border-color: rgba(255,255,255,0.35); }
 
 /* ════════════════════════════════════════════
