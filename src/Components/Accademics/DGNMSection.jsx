@@ -1,7 +1,6 @@
 import { FiCalendar, FiUser, FiBook, FiCheckSquare } from 'react-icons/fi';
 import { MdFemale } from 'react-icons/md';
 import Img1 from "../../assets/images/Academics/DGNM/1.JPG"
-import Img2 from "../../assets/images/Academics/DGNM/2.png"
 
 const INFO_CARDS = [
   {
@@ -77,17 +76,11 @@ export default function DGNMSection() {
             </div>
           </div>
 
-          <div className="academic-dgnm-image-stack">
+          <div className="academic-dgnm-image">
             <div className="academic-dgnm-img-main">
               <img
                 src={Img1}
                 alt="DGNM Students"
-              />
-            </div>
-            <div className="academic-dgnm-img-secondary">
-              <img
-                src={Img2}
-                alt="DGNM Lab"
               />
             </div>
           </div>

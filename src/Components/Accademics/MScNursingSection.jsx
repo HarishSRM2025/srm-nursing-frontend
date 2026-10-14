@@ -1,7 +1,6 @@
 import { FiArrowRight, FiActivity, FiHeart, FiUser, FiBriefcase, FiUsers } from 'react-icons/fi';
 import { MdMedicalServices } from 'react-icons/md';
 import Img1 from "../../assets/images/Academics/MSC/1.png"
-import Img2 from "../../assets/images/Academics/MSC/2.JPG"
 
 
 const SPECIALITIES = [
@@ -28,12 +27,6 @@ export default function MScNursingSection() {
               <img
                 src={Img1}
                 alt="MSc Nursing"
-              />
-            </div>
-            <div className="academic-msc-img-float">
-              <img
-                src={Img2}
-                alt="MSc Research"
               />
             </div>
           </div>
