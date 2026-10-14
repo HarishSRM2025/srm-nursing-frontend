@@ -12,8 +12,8 @@ import {
 const accreds = [
   // { icon: <FaAward />, name: "NAAC", desc: "National Assessment & Accreditation Council — Grade A" },
   { icon: <FaUserNurse />, name: "INC", desc: "Indian Nursing Council — Fully Recognized Institution" },
-  { icon: <FaUniversity />, name: "TNMGRMU", desc: "Tamil Nadu Dr. MGR Medical University — Affiliated" },
-  { icon: <FaShieldAlt />, name: "TNMC", desc: "Tamil Nadu Nurses & Midwives Council — Registered" },
+  { icon: <FaUniversity />, name: "TNMGRU", desc: "Tamil Nadu Dr. MGR Medical University — Affiliated" },
+  { icon: <FaShieldAlt />, name: "TNNMC", desc: "Tamil Nadu Nurses & Midwives Council — Registered" },
 ];
 
 const partners = [
