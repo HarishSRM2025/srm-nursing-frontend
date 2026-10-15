@@ -118,7 +118,7 @@ section {
 }
 
 .section-desc {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-light);
   max-width: 620px;
   margin: 0 auto;
@@ -227,7 +227,7 @@ section {
 }
 
 .footer-brand p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
   margin-top: 16px;
   margin-bottom: 20px;

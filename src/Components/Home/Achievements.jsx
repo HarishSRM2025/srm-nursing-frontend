@@ -303,7 +303,7 @@ export function Achievements() {
                           {/* Description */}
                           {a.description && (
                             <p style={{
-                              fontSize: 12,
+                              fontSize: 14,
                               color: "var(--text-secondary)",
                               lineHeight: 1.5,
                               margin: 0,

@@ -88,7 +88,7 @@ body {
 
 .asso-alumni__aims-text {
   color: var(--asso-text-light);
-  font-size: 0.98rem;
+  font-size: calc(0.98rem + 2px);
   line-height: 1.7;
 }
 
@@ -447,7 +447,7 @@ body {
 }
 
 .asso-club-card__desc {
-  font-size: 0.88rem;
+  font-size: calc(0.88rem + 2px);
   color: var(--asso-text-light);
   line-height: 1.65;
   margin-bottom: 16px;
@@ -529,7 +529,7 @@ body {
 
 .asso-cta__desc {
   color: rgba(255,255,255,0.7);
-  font-size: 1rem;
+  font-size: calc(1rem + 2px);
   line-height: 1.65;
 }
 
@@ -615,7 +615,7 @@ body {
 .asso-election__info p {
   font-family: var(--asso-font-body);
   color: var(--asso-text-light);
-  font-size: 0.98rem;
+  font-size: calc(0.98rem + 2px);
   line-height: 1.75;
   margin-bottom: 28px;
 }
@@ -770,7 +770,7 @@ body {
 .asso-section-sub {
   font-family: var(--asso-font-body);
   color: var(--asso-text-light);
-  font-size: 1.05rem;
+  font-size: calc(1.05rem + 2px);
   line-height: 1.7;
   max-width: 640px;
   margin: 0 auto;
@@ -934,7 +934,7 @@ body {
 .asso-sna__intro {
   font-family: var(--asso-font-body);
   color: var(--asso-text-light);
-  font-size: 1rem;
+  font-size: calc(1rem + 2px);
   line-height: 1.75;
   margin-bottom: 28px;
 }
@@ -958,7 +958,7 @@ body {
 
 .asso-sna__aims-text {
   color: rgba(255,255,255,0.88);
-  font-size: 0.98rem;
+  font-size: calc(0.98rem + 2px);
   line-height: 1.65;
 }
 
@@ -1094,7 +1094,7 @@ body {
 
 .yrc__sub {
   font-family: var(--asso-font-body);
-  font-size: 1rem;
+  font-size: calc(1rem + 2px);
   color: rgba(255, 255, 255, 0.55);
   max-width: 560px;
   margin: 0 auto;

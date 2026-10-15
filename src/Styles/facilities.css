@@ -48,7 +48,7 @@
 
 .fac-section-desc {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: calc(1.05rem + 2px);
   color: var(--text-light);
   line-height: 1.75;
   max-width: 640px;
@@ -65,7 +65,7 @@
 .fac-overview__text {}
 
 .fac-overview__text-body {
-  font-size: 1rem;
+  font-size: calc(1rem + 2px);
   color: var(--text-light);
   line-height: 1.8;
   margin-bottom: 32px;
@@ -405,7 +405,7 @@
 }
 
 .fac-card__desc {
-  font-size: 0.9rem;
+  font-size: calc(0.9rem + 2px);
   color: var(--text-light);
   line-height: 1.72;
   flex: 1;
@@ -759,7 +759,7 @@
 }
 
 .fac-tcard__text {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 2px);
   color: var(--text-light);
   line-height: 1.75;
   margin-bottom: 24px;
@@ -895,7 +895,7 @@
 }
 
 .fac-cta__desc {
-  font-size: 1.05rem;
+  font-size: calc(1.05rem + 2px);
   color: rgba(255,255,255,0.75);
   line-height: 1.7;
   margin-bottom: 40px;
@@ -1083,7 +1083,7 @@
 }
 
 .fac-spotlight__desc {
-  font-size: 1rem;
+  font-size: calc(1rem + 2px);
   color: var(--text-light);
   line-height: 1.78;
   margin-bottom: 28px;

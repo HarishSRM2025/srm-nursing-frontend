@@ -128,7 +128,7 @@
 }
 
 .hero-slide-desc {
-  font-size: 17px;
+  font-size: 19px;
   color: rgba(255,255,255,0.75);
   line-height: 1.8;
   margin-bottom: 36px;
@@ -399,7 +399,7 @@
 .about-desc {
   color: var(--text-light);
   line-height: 1.85;
-  font-size: 15.5px;
+  font-size: 17.5px;
   margin-bottom: 20px;
 }
 
@@ -561,7 +561,7 @@
 }
 .vm-pillar-number { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: #aba0bf; }
 .vm-pillar-card h4 { font-family: var(--font-display); font-size: 18px; line-height: 1.35; color: var(--primary); margin-bottom: 12px; }
-.vm-pillar-card p { font-size: 14px; line-height: 1.75; color: var(--text-light); }
+.vm-pillar-card p { font-size: 16px; line-height: 1.75; color: var(--text-light); }
 
 @media (max-width: 1100px) {
   .vm-pillars-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -679,7 +679,7 @@
 .vm-card p {
   line-height: 1.85;
   opacity: 0.85;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 /* Accent line at card bottom */
@@ -801,7 +801,7 @@
 }
 
 .vm-value-card p {
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: var(--text-light);
   line-height: 1.7;
 }
@@ -1024,7 +1024,7 @@
 }
 
 .lc-desc {
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: rgba(255,255,255,0.62);
   line-height: 1.8;
   white-space: pre-line;
@@ -1115,7 +1115,7 @@
 }
 
 .leader-card.featured .lc-desc {
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.85;
 }
 
@@ -1314,7 +1314,7 @@
 .cert h3 { color: #8b4a0a; }
 
 .program-header p {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   position: relative;
   z-index: 1;
@@ -1470,7 +1470,7 @@
 }
 
 .why-desc {
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: rgba(255,255,255,0.6);
   line-height: 1.75;
 }
@@ -1684,7 +1684,7 @@
 }
 
 .achieve-content p {
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: var(--text-light);
   line-height: 1.7;
   margin-bottom: 10px;
@@ -1748,7 +1748,7 @@
 }
 
 .testi-text {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text-light);
   line-height: 1.8;
   margin-bottom: 24px;
@@ -1918,7 +1918,7 @@
 
 .contact-item p {
   color: rgba(255,255,255,0.75);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -2226,7 +2226,7 @@
 }
 
 .leader-modal-para {
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: 18px;

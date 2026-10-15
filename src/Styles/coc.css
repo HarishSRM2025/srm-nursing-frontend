@@ -162,7 +162,7 @@ section[id] { scroll-margin-top: 140px; }
 }
 .coc-hero__title span { color: var(--teal-light); }
 .coc-hero__subtitle {
-  font-size: clamp(12px, 1.4vw, 15px);
+  font-size: calc(clamp(12px, 1.4vw, 15px) + 2px);
   color: rgba(255, 255, 255, 0.75);
   margin-top: 8px;
   max-width: 640px;
@@ -338,7 +338,7 @@ section[id] { scroll-margin-top: 140px; }
 .coc-rule__num--white { background: rgba(255,255,255,0.18); }
 
 .coc-rule__text {
-  font-size: clamp(13px, 1.4vw, 14.5px);
+  font-size: calc(clamp(13px, 1.4vw, 14.5px) + 2px);
   color: var(--text);
   line-height: 1.7;
   flex: 1;

@@ -67,7 +67,7 @@
 .clubs-hero p {
   max-width: 620px;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.78);
 }
@@ -127,7 +127,7 @@
   max-width: 640px;
   margin: 0 auto;
   color: var(--text-light);
-  font-size: 15.5px;
+  font-size: 17.5px;
   line-height: 1.75;
 }
 
@@ -237,7 +237,7 @@
 }
 
 .club-section__tagline {
-  font-size: 14.5px;
+  font-size: 16.5px;
   font-style: italic;
   color: var(--text-light);
   margin: 0;

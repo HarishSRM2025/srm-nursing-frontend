@@ -1,0 +1,4 @@
+/* Paragraphs without an explicit size remain relative to their parent. */
+:where(p) {
+  font-size: calc(1em + 2px);
+}

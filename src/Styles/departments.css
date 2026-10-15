@@ -35,7 +35,7 @@
 }
 .depart-grid-sub {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: calc(1rem + 2px);
   color: var(--text-light);
   max-width: 580px;
   margin: 0 auto;
@@ -242,7 +242,7 @@
 }
 .depart-card-para {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 2px);
   color: var(--text-light);
   line-height: 1.8;
   margin: 0 0 14px;
@@ -321,7 +321,7 @@
 }
 .depart-cta-sub {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: calc(1rem + 2px);
   color: rgba(255,255,255,0.72);
   line-height: 1.7;
   margin: 0 0 36px;

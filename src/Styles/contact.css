@@ -232,7 +232,7 @@
 
 .contact-form-section__media-card p {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -258,7 +258,7 @@
 
 .contact-form-section__desc {
   color: var(--text-light);
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.7;
   margin: 0 0 28px;
   max-width: 520px;
@@ -352,7 +352,7 @@
 .contact-form-section__success p {
   margin: 0;
   color: var(--text-light);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media (max-width: 900px) {
@@ -520,7 +520,7 @@
 
 .contact-depts__desc {
   color: var(--text-light);
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.7;
   margin: 0;
 }
@@ -573,7 +573,7 @@
 }
 
 .contact-depts__body p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-light);
   line-height: 1.6;
   margin: 0 0 16px;
@@ -692,7 +692,7 @@
 
 .contact-faq__answer {
   margin: 0 0 18px;
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.7;
   color: var(--text-light);
 }
@@ -743,7 +743,7 @@
 }
 
 .contact-cta__inner p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
   margin: 0 0 32px;

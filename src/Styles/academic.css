@@ -97,7 +97,7 @@
 
 .academic-section-subtitle {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-light);
   line-height: 1.7;
   max-width: 600px;
@@ -380,7 +380,7 @@
 }
 
 .academic-admission-step-content p {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text-light);
   line-height: 1.6;
 }
@@ -554,7 +554,7 @@
 }
 
 .academic-course-card-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-light);
   line-height: 1.7;
   margin-bottom: 20px;
@@ -899,7 +899,7 @@
 }
 
 .academic-cne-card-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-light);
   line-height: 1.7;
 }
@@ -924,7 +924,7 @@
 }
 
 .academic-cne-banner-text p {
-  font-size: 15px;
+  font-size: 17px;
   color: rgba(255,255,255,0.75);
 }
 
@@ -1081,7 +1081,7 @@
 }
 
 .academic-awards-center-image-overlay p {
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -1197,7 +1197,7 @@
 }
 
 .academic-calendar-event-info p {
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(255,255,255,0.6);
 }
 
@@ -1375,7 +1375,7 @@
 }
 
 .academic-cta-content p {
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255,255,255,0.75);
   max-width: 500px;
 }

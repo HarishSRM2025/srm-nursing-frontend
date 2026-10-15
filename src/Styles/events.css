@@ -926,7 +926,7 @@ a {
 
 .event-card__desc {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 2px);
   color: var(--text-light);
   line-height: 1.65;
   display: -webkit-box;
@@ -1575,7 +1575,7 @@ a {
 
 .event-no-results__sub {
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: calc(0.88rem + 2px);
 }
 
 /* ============================================================
