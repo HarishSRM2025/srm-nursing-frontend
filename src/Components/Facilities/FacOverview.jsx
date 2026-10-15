@@ -53,13 +53,13 @@ const FacOverview = () => {
                 src={HeroImg}
                 alt="Campus Overview"
               />
-              <div className="fac-overview__badge-float">
+              {/* <div className="fac-overview__badge-float">
                 <div className="fac-overview__badge-float-icon"><FiShield /></div>
                 <div className="fac-overview__badge-float-text">
                   <strong>NAAC</strong>
                   <span>Accredited</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
