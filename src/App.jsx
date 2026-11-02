@@ -20,6 +20,7 @@ import EventsPage from './Pages/EventsPage'
 import CNEPage from './Pages/CNEPage'
 import EventDetailPage from './Pages/EventDetailPage'
 import ClubsPage from './Pages/ClubsPage'
+import Chatbot from './Components/Common/Chatbot'
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
         <Route path="/clubs" element={<ClubsPage/>} />
       </Routes>
       <Footer/>
+      {/* <Chatbot/> */}
     </BrowserRouter>
     </>
   )
