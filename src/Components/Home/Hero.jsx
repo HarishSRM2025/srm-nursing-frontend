@@ -24,6 +24,7 @@ export default function Hero() {
             .filter(item => item.Status === "Active")
             .map(item => ({
               img: `${import.meta.env.VITE_BACKEND_API_URL}/uploads/${item.Image}`,
+              mobileImg: item.MobileImage ? `${import.meta.env.VITE_BACKEND_API_URL}/uploads/${item.MobileImage}` : null,
               bg: "linear-gradient(105deg,rgba(5, 18, 40, 0.88) 0%,rgba(10, 26, 64, 0.72) 55%,rgba(5, 18, 40, 0.40) 100%)",
               tag: item.Tag,
               title: item.Title,
@@ -70,7 +71,10 @@ export default function Hero() {
             <SwiperSlide key={i}>
               {({ isActive }) => (
                 <div className={`hero-slide${isActive ? " active" : ""}`}>
-                  <div className="hero-slide-img" style={{ backgroundImage: `url(${slide.img})` }} />
+                  <picture className="hero-slide-img">
+                    {slide.mobileImg && <source media="(max-width: 767px)" srcSet={slide.mobileImg} />}
+                    <img src={slide.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </picture>
                   <div className="hero-slide-overlay"  />
                   <div className="hero-slide-content">
                     <div className="hero-slide-text">
