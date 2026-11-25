@@ -353,7 +353,7 @@ export default function Navbar() {
               <div className="offcanvas-logo-name">SRM College</div>
               <div className="offcanvas-logo-sub">of Nursing Excellence</div>
             </div> */}
-            <img src={LogoImg} alt="SRM College of Nursing Excellence" className="nav-logo-img" style={{backgroundColor :'#fff',padding:'5px',borderRadius:'5px'}} />
+            <img src={LogoImg} alt="SRM College of Nursing Excellence" className="nav-logo-img" style={{backgroundColor :'#fff',padding:'2px 5px',borderRadius:'5px'}} />
           </div>
           <button className="offcanvas-close" onClick={() => setOcOpen(false)}>
             <FaTimes />
