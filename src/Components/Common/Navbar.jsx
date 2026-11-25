@@ -215,7 +215,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -226,8 +227,18 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = ocOpen ? "hidden" : "";
+    if (!ocOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
   }, [ocOpen]);
+
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1280px)');
+    const closeOnDesktop = () => { if (desktop.matches) setOcOpen(false); };
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => desktop.removeEventListener('change', closeOnDesktop);
+  }, []);
 
   const handleAnchor = (href) => {
     const el = document.querySelector(href);
@@ -337,7 +348,7 @@ export default function Navbar() {
             </li>
           </ul>
 
-          <button className="nav-toggle" onClick={() => setOcOpen(true)}>
+          <button className="nav-toggle" aria-label="Open navigation" aria-expanded={ocOpen} aria-controls="mobile-navigation" onClick={() => setOcOpen(true)}>
             <FaBars />
           </button>
         </div>
@@ -345,7 +356,7 @@ export default function Navbar() {
 
       {/* Offcanvas */}
       <div className={`offcanvas-backdrop${ocOpen ? " open" : ""}`} onClick={() => setOcOpen(false)} />
-      <aside className={`offcanvas${ocOpen ? " open" : ""}`}>
+      <aside id="mobile-navigation" aria-label="Mobile navigation" inert={!ocOpen} className={`offcanvas${ocOpen ? " open" : ""}`}>
         <div className="offcanvas-header">
           <div className="offcanvas-logo">
             {/* <div className="offcanvas-logo-icon"><FaHospitalUser /></div> */}
@@ -353,9 +364,9 @@ export default function Navbar() {
               <div className="offcanvas-logo-name">SRM College</div>
               <div className="offcanvas-logo-sub">of Nursing Excellence</div>
             </div> */}
-            <img src={LogoImg} alt="SRM College of Nursing Excellence" className="nav-logo-img" style={{backgroundColor :'#fff',padding:'2px 5px',borderRadius:'5px'}} />
+            <img src={LogoImg} alt="SRM College of Nursing Excellence" className="nav-logo-img" />
           </div>
-          <button className="offcanvas-close" onClick={() => setOcOpen(false)}>
+          <button className="offcanvas-close" aria-label="Close navigation" onClick={() => setOcOpen(false)}>
             <FaTimes />
           </button>
         </div>

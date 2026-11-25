@@ -16,7 +16,8 @@ export default function TopBar() {
 
   useEffect(() => {
     const onScroll = () => setHidden(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 

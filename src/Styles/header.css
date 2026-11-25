@@ -116,7 +116,7 @@
   color: white;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1279px) {
   .topbar { display: none; }
 }
 
@@ -148,6 +148,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 28px;
+  gap: 20px;
 }
 
 .nav-logo {
@@ -155,12 +156,20 @@
   align-items: center;
   gap: 13px;
   text-decoration: none;
+  flex: 0 1 280px;
+  min-width: 0;
+  height: 100%;
+  padding: 8px 0;
 }
 .nav-logo-img{
-  /* width: 100%; */
-  height: 70px;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  max-height: 100%;
   border-radius: 10px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .nav-logo-icon {
@@ -204,6 +213,7 @@
   align-items: center;
   gap: 2px;
   list-style: none;
+  flex-shrink: 0;
 }
 
 .nav-menu > li {
@@ -214,7 +224,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 10px 14px;
+  padding: 10px 10px;
   color: var(--primary);
   text-decoration: none;
   font-size: 13.5px;
@@ -321,15 +331,33 @@
   color: var(--primary-dark);
   font-size: 22px;
   padding: 4px;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1279px) {
   .navbar  {
      top: 0;
     }
 
   .nav-menu { display: none; }
   .nav-toggle { display: flex; align-items: center; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .nav-inner { padding: 0 12px; gap: 12px; }
+  .navbar, .navbar.scrolled { height: 68px; }
+  .nav-logo { flex-basis: 240px; }
+}
+
+@media (min-width: 1280px) and (max-width: 1399px) {
+  .topbar-notice { display: none; }
+}
+
+.nav-menu > li:nth-last-child(-n + 3) > .dropdown {
+  left: auto;
+  right: 0;
 }
 
 /* ─── OFFCANVAS ─── */
@@ -356,6 +384,7 @@
   width: 300px;
   max-width: 88vw;
   height: 100vh;
+  height: 100dvh;
   background: #0a1a2f;
   z-index: 1200;
   display: flex;
@@ -363,10 +392,12 @@
   transform: translateX(-100%);
   transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
   overflow: hidden;
+  visibility: hidden;
 }
 
 .offcanvas.open {
   transform: translateX(0);
+  visibility: visible;
 }
 
 .offcanvas-header {
@@ -376,12 +407,22 @@
   padding: 18px 22px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   flex-shrink: 0;
+  gap: 12px;
 }
 
 .offcanvas-logo {
   display: flex;
   align-items: center;
   gap: 11px;
+  flex: 1;
+  min-width: 0;
+}
+
+.offcanvas-logo .nav-logo-img {
+  max-height: 54px;
+  background: white;
+  padding: 2px 5px;
+  border-radius: 5px;
 }
 
 .offcanvas-logo-icon {
@@ -413,6 +454,7 @@
 }
 
 .offcanvas-close {
+  flex-shrink: 0;
   width: 36px;
   height: 36px;
   border-radius: 8px;
@@ -434,6 +476,8 @@
 
 .offcanvas-body {
   flex: 1;
+  min-height: 0;
+  overscroll-behavior: contain;
   overflow-y: auto;
   padding: 10px 0 20px;
 }
@@ -651,4 +695,23 @@
 
 .facility-trigger > span {
   flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Keep third-level document lists within the viewport. */
+.nav-facility-links .nav-flyout > .nav-facility-links {
+  position: static;
+  width: 100%;
+  box-shadow: none;
+  border: 0;
+  padding-left: 12px;
+  max-height: 45vh;
+  overflow-y: auto;
+}
+
+.dropdown a span,
+.offcanvas-sub a span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
