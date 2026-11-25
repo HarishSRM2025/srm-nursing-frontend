@@ -348,12 +348,12 @@ export default function Navbar() {
       <aside className={`offcanvas${ocOpen ? " open" : ""}`}>
         <div className="offcanvas-header">
           <div className="offcanvas-logo">
-            <div className="offcanvas-logo-icon"><FaHospitalUser /></div>
+            {/* <div className="offcanvas-logo-icon"><FaHospitalUser /></div> */}
             {/* <div>
               <div className="offcanvas-logo-name">SRM College</div>
               <div className="offcanvas-logo-sub">of Nursing Excellence</div>
             </div> */}
-            <img src={LogoImg} alt="SRM College of Nursing Excellence" className="nav-logo-img" />
+            <img src={LogoImg} alt="SRM College of Nursing Excellence" className="nav-logo-img" style={{backgroundColor :'#fff',padding:'5px',borderRadius:'5px'}} />
           </div>
           <button className="offcanvas-close" onClick={() => setOcOpen(false)}>
             <FaTimes />
